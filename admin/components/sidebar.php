@@ -2,19 +2,19 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light ">SOUND - Music And Video App</span>
+      <span class="brand-text font-weight-light ">SOUND - <br>The Music And Video App</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
+        <!-- <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
+        </div> -->
         <div class="info">
           <a href="#" class="d-block">
-            <?php echo $_SESSION['user']['username'];?>
+            <?php echo $_SESSION['user']['username'];?> - <?php  echo $_SESSION['user']['role'];?>
           </a>
         </div>
       </div>
@@ -61,7 +61,7 @@
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="products.php" class="nav-link active">
+            <a href="artist.php" class="nav-link active">
             <i class="nav-icon far fa-plus-square"></i>
               <p>
                  Artist
