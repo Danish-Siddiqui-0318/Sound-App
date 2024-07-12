@@ -13,7 +13,7 @@ if (isset($_SESSION['user'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdmAptech E-commerce</title>
+    <title>Sound - Music And Video App</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -31,7 +31,7 @@ if (isset($_SESSION['user'])) {
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="index2.html" class="h1"><b>Aptech</b>Ecommerce</a>
+                <a href="index2.html" class="h1">Sound - Music And Video App</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
