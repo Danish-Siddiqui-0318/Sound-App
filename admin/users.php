@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aptech Ecommerce | Products</title>
+    <title>Sound - The Music And Video App</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -37,12 +37,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Products</h1>
+                            <h1>Users</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Products</li>
+                                <li class="breadcrumb-item active">Users</li>
                             </ol>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Products</h3>
+                        <h3 class="card-title">Users</h3>
 
                         <div class="card-tools">
                             <a href="adduser.php" class="btn btn btn-sm btn-primary">
@@ -89,8 +89,11 @@
                                             <td><?php echo $row['username']; ?></td>
                                             <td><?php echo $row['email']; ?></td>
                                             <td><?php echo $row['role']; ?></td>
-                                            <td> <a href="" class="btn btn-sm btn-warning">
-                                                    Edit Role</a> | <a href="" class="btn btn-sm btn-danger">Delete User</a>
+                                            <td> <a href="edituser.php?id=<?php echo $row['id']; ?>"
+                                                    class="btn btn-sm btn-warning">
+                                                    Edit </a> 
+                                                    | <a href="deleteuser.php?id=<?php echo $row['id']; ?>"
+                                                    class="btn btn-sm btn-danger">Delete User</a>
                                             </td>
                                         </tr>
                                         <?php
