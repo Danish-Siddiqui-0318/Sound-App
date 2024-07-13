@@ -86,7 +86,7 @@
                                             <td><?php echo $row['artist_id']; ?></td>
                                             <td><?php echo $row['artist_name']; ?></td>
                                             <td> <a href="editartist.php?id=<?php echo $row['artist_id']?>" class="btn btn-sm btn-warning">
-                                                    Edit Role</a> | <a href="" class="btn btn-sm btn-danger">Delete User</a>
+                                                    Edit Role</a> | <a href="deleteartist.php?id=<?php echo $row['artist_id']?>" class="btn btn-sm btn-danger">Delete User</a>
                                             </td>
                                         </tr>
                                         <?php
