@@ -33,7 +33,7 @@
    </head>
    <body>
       <!-- header section start --> 
-      <?php include_once('component/navbar.php') ?>
+      <?php include_once('components/navbar.php') ?>
       <!-- header section end -->
       <!-- banner section end -->
       <div class="banner_section layout_padding">

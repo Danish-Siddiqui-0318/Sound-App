@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    if(! isset($_SESSION['user'])){
+        header("Location: login.php");
+        exit();
+    }
+?>
+
+
 <div class="header_section">
          <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="logo" href="index.html"><img src="images/logo.png"></a>
