@@ -50,8 +50,7 @@ CREATE TABLE `users` (
 insert  into `users`(`id`,`username`,`email`,`password`,`role`) values 
 (3,'Danish Siddiqui','danish@gmail.com','danish','Admin'),
 (4,'Waqar Hussain','Waqar@gmail.com','Waqar','User'),
-(5,'Uzair Arain','uzair@gmail.com','uzair','User'),
-(6,'danish2','danish2@gmail.com','danish2','User');
+(5,'Uzair Arain','uzair@gmail.com','uzair','User');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
