@@ -28,10 +28,8 @@
                      <a class="nav-link" href="celebs.html">Celebs</a>
                   </li>
                </ul>
-               <div class="search_icon"><a href="#"><img src="images/notification-icon.png"><span class="padding_left_15">Notificastion</span></a></div>
-               <div class="search_icon"><a href="#"><img src="images/eye-icon.png"><span class="padding_left_15">Viwe</span></a></div>
-               <div class="search_icon"><a href="#"><img src="images/user-icon.png"><span class="padding_left_15">login</span></a></div>
-               <div class="search_icon"><a href="#"><img src="images/search-icon.png"><span class="padding_left_15">Search...</span></a></div>
+               <div class="search_icon"><a href="logout.php"><img src="images/user-icon.png"><span class="padding_left_15">logout</span></a></div>
+               <!-- <div class="search_icon"><a href="#"><img src="images/search-icon.png"><span class="padding_left_15">Search...</span></a></div> -->
             </div>
          </nav>
       </div>
