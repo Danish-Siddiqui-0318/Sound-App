@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sound The Music And Video App</title>
+    <title>Sound - The Music And Video App</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -37,12 +37,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Artist Page</h1>
+                            <h1>Music Genre</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Artist</li>
+                                <li class="breadcrumb-item active">Music Genre</li>
                             </ol>
                         </div>
                     </div>
@@ -55,11 +55,11 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Artist</h3>
+                        <h3 class="card-title">Music Genre</h3>
 
                         <div class="card-tools">
-                            <a href="addartist.php" class="btn btn btn-sm btn-primary">
-                                <i class="fas fa-plus"></i> Add Artist
+                            <a href="addmusicgenre.php" class="btn btn btn-sm btn-primary">
+                                <i class="fas fa-plus"></i> Add Music Genre
                             </a>
                         </div>
                     </div>
@@ -70,24 +70,25 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Artist Id</th>
-                                    <th>Artist Name</th>
+                                    <th>Id</th>
+                                    <th>Music Genre Name</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                $query = "SELECT * FROM artist";
+                                $query = "SELECT * FROM musicgenre";
                                 $result = mysqli_query($connection, $query);
                                 if ($result->num_rows > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $row['artist_id']; ?></td>
-                                            <td><?php echo $row['artist_name']; ?></td>
-                                            <td> <a href="editartist.php?id=<?php echo $row['artist_id'] ?>"
+                                            <td><?php echo $row['id']; ?></td>
+                                            <td><?php echo $row['music_genre_name']; ?></td>
+                                            <td> <a href="editmusicgenre.php?id=<?php echo $row['id']; ?>"
                                                     class="btn btn-sm btn-warning">
-                                                    Edit Role</a> | <a href="deleteartist.php?id=<?php echo $row['artist_id'] ?>"
+                                                    Edit </a> 
+                                                    | <a href="deletemusicgenre.php?id=<?php echo $row['id']; ?>"
                                                     class="btn btn-sm btn-danger">Delete User</a>
                                             </td>
                                         </tr>

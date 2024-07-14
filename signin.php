@@ -48,6 +48,11 @@ if (isset($_SESSION['user'])) {
                 <input type="password" id="form2Example28" class="form-control form-control-lg" name="password" />
                 <label class="form-label" for="form2Example28">Password</label>
               </div>
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" id="form2Example28" class="form-control form-control-lg" name="role" value="User"
+                  hidden />
+                <!-- <label class="form-label" for="form2Example28">Password</label> -->
+              </div>
 
               <div class="pt-1 mb-4">
                 <button data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg btn-block"
@@ -56,7 +61,7 @@ if (isset($_SESSION['user'])) {
 
               <p class="small pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
               <button class="btn btn-primary "><a href="login.php" class="text-white">
-                  Login if you Already have account 
+                  Login if you Already have account
                 </a> </button>
 
             </form>
