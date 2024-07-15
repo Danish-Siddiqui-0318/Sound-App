@@ -37,12 +37,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Artist Page</h1>
+                            <h1>ablum Page</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Artist</li>
+                                <li class="breadcrumb-item active">ablum</li>
                             </ol>
                         </div>
                     </div>
@@ -55,11 +55,11 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Artist</h3>
+                        <h3 class="card-title">Ablum</h3>
 
                         <div class="card-tools">
-                            <a href="addartist.php" class="btn btn btn-sm btn-primary">
-                                <i class="fas fa-plus"></i> Add Artist
+                            <a href="addablum.php" class="btn btn btn-sm btn-primary">
+                                <i class="fas fa-plus"></i> Add Ablum
                             </a>
                         </div>
                     </div>
@@ -70,25 +70,32 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Artist Id</th>
-                                    <th>Artist Name</th>
+                                    <th>Album Id</th>
+                                    <th>Album Name</th>
+                                    <th>Artist </th>
+                                    <th>Year Of Release </th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                $query = "SELECT * FROM artist";
+                                $query = "SELECT album.*, artist_name AS artist_name
+                                FROM album
+                                INNER JOIN artist ON album.artist = artist.artist_id;
+                                ";
                                 $result = mysqli_query($connection, $query);
                                 if ($result->num_rows > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $row['artist_id']; ?></td>
+                                            <td><?php echo $row['id']; ?></td>
+                                            <td><?php echo $row['album_name']; ?></td>
                                             <td><?php echo $row['artist_name']; ?></td>
-                                            <td> <a href="editartist.php?id=<?php echo $row['artist_id'] ?>"
+                                            <td><?php echo $row['releaseyear']; ?></td>
+                                            <td> <a href="editalbum.php?id=<?php echo $row['id'] ?>"
                                                     class="btn btn-sm btn-warning">
-                                                    Edit Artist details</a> | <a href="deleteartist.php?id=<?php echo $row['artist_id'] ?>"
-                                                    class="btn btn-sm btn-danger">Delete artist</a>
+                                                    Edit Role</a> | <a href="deletealbum.php?id=<?php echo $row['id'] ?>"
+                                                    class="btn btn-sm btn-danger">Delete User</a>
                                             </td>
                                         </tr>
                                         <?php
