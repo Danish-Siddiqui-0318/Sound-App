@@ -40,7 +40,7 @@ if (isset($_SESSION['user'])) {
 
               <div class="pt-1 mb-4">
                 <input data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg btn-block"
-                  type="submit"></input>
+                  type="submit" value="Login"></input>
               </div>
 
               <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>

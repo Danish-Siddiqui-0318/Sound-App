@@ -86,7 +86,7 @@
           </a>
         </li>
         <li class="nav-item menu-open">
-          <a href="addvideogenre.php" class="nav-link active">
+          <a href="videogenre.php" class="nav-link active">
             <i class="nav-icon far fa-plus-square"></i>
             <p>
               Video Genre

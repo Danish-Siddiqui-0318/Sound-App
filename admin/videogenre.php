@@ -87,9 +87,9 @@
                                             <td><?php echo $row['video_genre_name']; ?></td>
                                             <td> <a href="editvideogenre.php?id=<?php echo $row['id']; ?>"
                                                     class="btn btn-sm btn-warning">
-                                                    Edit </a> 
+                                                    Edit Video Genre</a> 
                                                     | <a href="deletevideogenre.php?id=<?php echo $row['id']; ?>"
-                                                    class="btn btn-sm btn-danger">Delete Video</a>
+                                                    class="btn btn-sm btn-danger">Delete Video Genre</a>
                                             </td>
                                         </tr>
                                         <?php
