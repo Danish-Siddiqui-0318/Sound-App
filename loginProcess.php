@@ -5,8 +5,8 @@ $password = $_POST['password'];
 
 
 
-$query ="SELECT * FROM  users WHERE email='$email' AND password = '$password'";
-$result = mysqli_query($connection,$query);
+$sqlquery ="SELECT * FROM  users WHERE email='$email' AND password = '$password'";
+$result = mysqli_query($connection,$sqlquery);
 if($result->num_rows>0){
     $row = mysqli_fetch_assoc($result);
     session_start();

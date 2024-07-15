@@ -1,6 +1,6 @@
 <?php
 session_start();
-$result = session_destroy();
-if($result){
+$results = session_destroy();
+if($results){
     header('location:login.php');
 }

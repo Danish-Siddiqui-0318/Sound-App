@@ -37,12 +37,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>ablum Page</h1>
+                            <h1>album Page</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">ablum</li>
+                                <li class="breadcrumb-item active">album</li>
                             </ol>
                         </div>
                     </div>
@@ -55,11 +55,11 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Ablum</h3>
+                        <h3 class="card-title">album</h3>
 
                         <div class="card-tools">
-                            <a href="addablum.php" class="btn btn btn-sm btn-primary">
-                                <i class="fas fa-plus"></i> Add Ablum
+                            <a href="addalbum.php" class="btn btn btn-sm btn-primary">
+                                <i class="fas fa-plus"></i> Add Album
                             </a>
                         </div>
                     </div>
@@ -94,8 +94,8 @@
                                             <td><?php echo $row['releaseyear']; ?></td>
                                             <td> <a href="editalbum.php?id=<?php echo $row['id'] ?>"
                                                     class="btn btn-sm btn-warning">
-                                                    Edit Role</a> | <a href="deletealbum.php?id=<?php echo $row['id'] ?>"
-                                                    class="btn btn-sm btn-danger">Delete User</a>
+                                                    Update Album</a> | <a href="deletealbum.php?id=<?php echo $row['id'] ?>"
+                                                    class="btn btn-sm btn-danger">Delete Album</a>
                                             </td>
                                         </tr>
                                         <?php
