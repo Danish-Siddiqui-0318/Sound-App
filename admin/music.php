@@ -37,12 +37,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Music Genre</h1>
+                            <h1>Music Page</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Music Genre</li>
+                                <li class="breadcrumb-item active">Music</li>
                             </ol>
                         </div>
                     </div>
@@ -55,11 +55,11 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Music Genre</h3>
+                        <h3 class="card-title">Music</h3>
 
                         <div class="card-tools">
-                            <a href="addmusicgenre.php" class="btn btn btn-sm btn-primary">
-                                <i class="fas fa-plus"></i> Add Music Genre
+                            <a href="addmusic.php" class="btn btn btn-sm btn-primary">
+                                <i class="fas fa-plus"></i> Add Music
                             </a>
                         </div>
                     </div>
@@ -70,26 +70,32 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Music Genre Name</th>
+                                    <th>Music Id</th>
+                                    <th>Music Title</th>
+                                    <th>Music-Artist</th>
+                                    <th>Music-Album</th>
+                                    <th>Music-Genre</th>
+                                    <th>Release Year</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                $query = "SELECT * FROM musicgenre";
+                                $query = "SELECT * FROM music";
                                 $result = mysqli_query($connection, $query);
                                 if ($result->num_rows > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         ?>
                                         <tr>
                                             <td><?php echo $row['id']; ?></td>
-                                            <td><?php echo $row['music_genre_name']; ?></td>
-                                            <td> <a href="editmusicgenre.php?id=<?php echo $row['id']; ?>"
+                                            <td><?php echo $row['username']; ?></td>
+                                            <td><?php echo $row['email']; ?></td>
+                                            <td><?php echo $row['role']; ?></td>
+                                            <td> <a href="editmusic.php?id=<?php echo $row['id']; ?>"
                                                     class="btn btn-sm btn-warning">
-                                                    Edit Music Genre </a> 
-                                                    | <a href="deletemusicgenre.php?id=<?php echo $row['id']; ?>"
-                                                    class="btn btn-sm btn-danger">Delete Music Genre</a>
+                                                    Edit Music </a>
+                                                | <a href="deletemusic.php?id=<?php echo $row['id']; ?>"
+                                                    class="btn btn-sm btn-danger">Delete Music</a>
                                             </td>
                                         </tr>
                                         <?php
@@ -97,7 +103,7 @@
                                 } else {
                                     ?>
                                     <tr>
-                                        <td colspan="5">No records found</td>
+                                        <td colspan="7">No records found</td>
                                     </tr>
                                     <?php
                                 }

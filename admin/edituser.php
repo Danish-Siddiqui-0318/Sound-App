@@ -66,8 +66,8 @@
                     <div class="input-group mb-3">
                         <label for="role" class="mx-2">Select Role</label>
                         <select name="role" id="role" class="mx-2" value="<?php echo $row['role']; ?>">Select Role
+                            <option value="User" >User</option>
                             <option value="Admin">Admin</option>
-                            <option value="User">User</option>
                         </select>
                     </div>
                     <div class="row">
