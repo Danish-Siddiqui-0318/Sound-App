@@ -88,9 +88,11 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $row['id']; ?></td>
-                                            <td><?php echo $row['username']; ?></td>
-                                            <td><?php echo $row['email']; ?></td>
-                                            <td><?php echo $row['role']; ?></td>
+                                            <td><?php echo $row['music_title']; ?></td>
+                                            <td><?php echo $row['music_artist']; ?></td>
+                                            <td><?php echo $row['music_album']; ?></td>
+                                            <td><?php echo $row['music_genre']; ?></td>
+                                            <td><?php echo $row['music_year']; ?></td>
                                             <td> <a href="editmusic.php?id=<?php echo $row['id']; ?>"
                                                     class="btn btn-sm btn-warning">
                                                     Edit Music </a>

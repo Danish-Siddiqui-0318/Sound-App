@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aptech Ecommerce | Products</title>
+    <title>Sound - The Music And Video App</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -33,12 +33,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Add Products</h1>
+                            <h1>Add Artists</h1>
                         </div>
                         <!-- <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Add Products</li>
+                                <li class="breadcrumb-item active">Add Artists</li>
                             </ol>
                         </div> -->
                     </div>
@@ -54,8 +54,8 @@
                         <h3 class="card-title">Add New Product</h3>
 
                         <div class="card-tools">
-                            <a href="products.php" class="btn btn btn-sm btn-primary">
-                                <i class="fas fa-plus"></i> View Products
+                            <a href="artist.php" class="btn btn btn-sm btn-primary">
+                                <i class="fas fa-plus"></i> View Artists
                             </a>
                         </div>
                     </div>
