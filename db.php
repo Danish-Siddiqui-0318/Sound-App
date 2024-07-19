@@ -27,12 +27,9 @@ CREATE TABLE `album` (
   `album_photo` varchar(255) DEFAULT NULL,
   `releaseyear` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `album` */
-
-insert  into `album`(`id`,`album_name`,`artist`,`album_photo`,`releaseyear`) values 
-(1,'1989 (Taylor Version)','3','albumimage/images.jpeg','2023');
 
 /*Table structure for table `artist` */
 
@@ -43,13 +40,9 @@ CREATE TABLE `artist` (
   `artist_name` varchar(255) DEFAULT NULL,
   `artist_image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`artist_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `artist` */
-
-insert  into `artist`(`artist_id`,`artist_name`,`artist_image`) values 
-(3,'Taylor Swift','artist_image/GettyImages-1987932445.jpeg'),
-(4,'Ed Sheeran','artist_image/Ed_Sheeran-6886_(cropped).jpg');
 
 /*Table structure for table `music` */
 
@@ -57,12 +50,14 @@ DROP TABLE IF EXISTS `music`;
 
 CREATE TABLE `music` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `music` varchar(255) DEFAULT NULL,
+  `music-loc` varchar(255) DEFAULT NULL,
   `music-title` varchar(255) DEFAULT NULL,
   `music_year` varchar(255) DEFAULT NULL,
   `music-artist` varchar(255) DEFAULT NULL,
   `music_album` varchar(255) DEFAULT NULL,
   `music-genre` varchar(255) DEFAULT NULL,
+  `music-artist-photo` varchar(255) DEFAULT NULL,
+  `music-album-photo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -76,12 +71,9 @@ CREATE TABLE `musicgenre` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `music_genre_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `musicgenre` */
-
-insert  into `musicgenre`(`id`,`music_genre_name`) values 
-(3,'pop music');
 
 /*Table structure for table `users` */
 
@@ -94,14 +86,16 @@ CREATE TABLE `users` (
   `password` varchar(255) DEFAULT NULL,
   `role` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`username`,`email`,`password`,`role`) values 
 (3,'Danish Siddiqui','danish@gmail.com','danish','Admin'),
-(4,'waqar Hussain','waqar@gmail.com','Waqar','User'),
-(5,'Uzair Arain','uzair@gmail.com','uzair','User');
+(4,'Waqar Hussain','Waqar@gmail.com','Waqar','User'),
+(5,'Uzair Arain','uzair@gmail.com','uzair','User'),
+(6,'danish2','danish2@gmail.com','danish2','User'),
+(7,'','','','Admin');
 
 /*Table structure for table `videogenre` */
 
@@ -111,12 +105,9 @@ CREATE TABLE `videogenre` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `video_genre_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `videogenre` */
-
-insert  into `videogenre`(`id`,`video_genre_name`) values 
-(2,'Thriller');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
