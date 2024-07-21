@@ -109,6 +109,22 @@ insert  into `users`(`id`,`username`,`email`,`password`,`role`) values
 (3,'Danish Siddiqui','danish@gmail.com','danish','Admin'),
 (4,'waqar Hussain','waqar@gmail.com','Waqar','User');
 
+/*Table structure for table `video` */
+
+DROP TABLE IF EXISTS `video`;
+
+CREATE TABLE `video` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `video_loc` varchar(255) DEFAULT NULL,
+  `video_thumbnail` varchar(255) DEFAULT NULL,
+  `video_title` varchar(255) DEFAULT NULL,
+  `video_genre` varchar(255) DEFAULT NULL,
+  `video_description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `video` */
+
 /*Table structure for table `videogenre` */
 
 DROP TABLE IF EXISTS `videogenre`;
