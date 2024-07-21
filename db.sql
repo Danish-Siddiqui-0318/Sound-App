@@ -27,12 +27,13 @@ CREATE TABLE `album` (
   `album_photo` varchar(255) DEFAULT NULL,
   `releaseyear` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `album` */
 
 insert  into `album`(`id`,`album_name`,`artist`,`album_photo`,`releaseyear`) values 
-(3,'Vaaqif','5','albumimage/maxresdefault.jpg','2021');
+(3,'Vaaqif','5','albumimage/maxresdefault.jpg','2021'),
+(4,'1989 (Taylor Version)','3','albumimage/1691649276596_ELLEHEAD-2023-08-10T163406.015.jpg','2023');
 
 /*Table structure for table `artist` */
 
@@ -65,12 +66,13 @@ CREATE TABLE `music` (
   `music_album` varchar(255) DEFAULT NULL,
   `music_genre` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `music` */
 
 insert  into `music`(`id`,`music_loc`,`music_title`,`music_year`,`music_artist`,`music_album`,`music_genre`) values 
-(1,'music/[SPOTIFY-DOWNLOADER.COM] Aaoge Tum Kabhi.mp3','Aoge Tum Kabhi','2015','5','3','4');
+(1,'music/[SPOTIFY-DOWNLOADER.COM] Aaoge Tum Kabhi.mp3','Aoge Tum Kabhi','2015','3','3','4'),
+(2,'music/spotifydown.com - Blank Space.mp3','Blank Space','2023','3','4','3');
 
 /*Table structure for table `musicgenre` */
 
