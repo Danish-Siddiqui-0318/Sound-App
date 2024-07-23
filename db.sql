@@ -116,6 +116,7 @@ DROP TABLE IF EXISTS `video`;
 CREATE TABLE `video` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `video_loc` varchar(255) DEFAULT NULL,
+  `video_artist` varchar(255) DEFAULT NULL,
   `video_thumbnail` varchar(255) DEFAULT NULL,
   `video_title` varchar(255) DEFAULT NULL,
   `video_genre` varchar(255) DEFAULT NULL,
@@ -124,6 +125,23 @@ CREATE TABLE `video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `video` */
+
+/*Table structure for table `video_artist` */
+
+DROP TABLE IF EXISTS `video_artist`;
+
+CREATE TABLE `video_artist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `artist_name` varchar(255) DEFAULT NULL,
+  `artist_img` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `video_artist` */
+
+insert  into `video_artist`(`id`,`artist_name`,`artist_img`) values 
+(1,'MrBeast','video_artist_image/107362612-1705955518431-gettyimages-1247748364-AFP_33AK2JG.jpeg'),
+(4,'Dhurv Rathee','video_artist_image/dhurv.jpeg');
 
 /*Table structure for table `videogenre` */
 
