@@ -119,6 +119,7 @@ CREATE TABLE `video` (
   `video_artist` varchar(255) DEFAULT NULL,
   `video_thumbnail` varchar(255) DEFAULT NULL,
   `video_title` varchar(255) DEFAULT NULL,
+  `release_date` varchar(255) DEFAULT NULL,
   `video_genre` varchar(255) DEFAULT NULL,
   `video_description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)

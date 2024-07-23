@@ -75,7 +75,7 @@
                                     <th>Video Thumbnail</th>
                                     <th>Video-Artist</th>
                                     <th>Video-Genre</th>
-                                    <th>Release Year</th>
+                                    <th>Release Date</th>
                                     <th>Video Description</th>
                                     <th>Actions</th>
                                 </tr>
