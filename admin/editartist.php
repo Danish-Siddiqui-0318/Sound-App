@@ -70,6 +70,26 @@
                                 <input type="hidden" name="artist_id" value="<?php echo $row['artist_id'] ?>">
                             </div>
                         </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="artist_name">Artist Image</label>
+                                <br>
+                                <input type="hidden" value="<?php echo $row['artist_image'] ?>" name="artist_image">
+                                <img src="<?php echo $row['artist_image'] ?>" alt="" class="img-fluid" width="200"
+                                    height="200">
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <label for="exampleInputFile">File input</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="exampleInputFile"
+                                        name="artist_image_new" accept="image/*">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
                         <!-- /.card-body -->
 
                         <div class="card-footer">

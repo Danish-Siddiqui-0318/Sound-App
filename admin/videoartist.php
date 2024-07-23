@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sound - The Music And Video App</title>
+    <title>Sound The Music And Video App</title>
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -22,11 +23,11 @@
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
-        <?php include_once('components/navbar.php'); ?>
+        <?php include_once ('components/navbar.php'); ?>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <?php include_once('components/sidebar.php'); ?>
+        <?php include_once ('components/sidebar.php'); ?>
 
 
         <!-- Content Wrapper. Contains page content -->
@@ -36,12 +37,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Music Page</h1>
+                            <h1>Video Artist Page</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Music</li>
+                                <li class="breadcrumb-item active">Video Artist</li>
                             </ol>
                         </div>
                     </div>
@@ -54,57 +55,51 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Music</h3>
+                        <h3 class="card-title">Video Artist</h3>
 
                         <div class="card-tools">
-                            <a href="addmusic.php" class="btn btn btn-sm btn-primary">
-                                <i class="fas fa-plus"></i> Add Music
+                            <a href="addvideoartist.php" class="btn btn btn-sm btn-primary">
+                                <i class="fas fa-plus"></i> Add Video Artist
                             </a>
                         </div>
                     </div>
                     <div class="card-body">
                         <?php
-                        require_once('db.php');
+                        require_once ('db.php');
                         ?>
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Music Id</th>
-                                    <th>Music Title</th>
-                                    <th>Music-Artist</th>
-                                    <th>Music-Album</th>
-                                    <th>Music-Genre</th>
-                                    <th>Release Year</th>
+                                    <th>Artist Id</th>
+                                    <th>Artist Name</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                $query = "SELECT music.*,artist.artist_name, artist.artist_image, album.album_name, album.album_photo, album.releaseyear,musicgenre.music_genre_name FROM music INNER JOIN artist ON music.music_artist= artist.artist_id INNER JOIN album ON music.music_album = album.id INNER JOIN musicgenre ON music.music_genre = musicgenre.id";
+                                $query = "SELECT * FROM video_artist";
                                 $result = mysqli_query($connection, $query);
                                 if ($result->num_rows > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
-                                ?>
+                                        ?>
                                         <tr>
                                             <td><?php echo $row['id']; ?></td>
-                                            <td><?php echo $row['music_title']; ?></td>
                                             <td><?php echo $row['artist_name']; ?></td>
-                                            <td><?php echo $row['album_name']; ?></td>
-                                            <td><?php echo $row['music_genre_name']; ?></td>
-                                            <td><?php echo $row['music_year']; ?></td>
-                                            <td> <a href="editmusic.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning">
-                                                    Edit Music </a>
-                                                | <a href="deletemusic.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">Delete Music</a>
+                                            <td> <a href="editvideoartist.php?id=<?php echo $row['id'] ?>"
+                                                    class="btn btn-sm btn-warning">
+                                                    Edit Artist details</a> | <a
+                                                    href="deletevideoartist.php?id=<?php echo $row['id'] ?>"
+                                                    class="btn btn-sm btn-danger">Delete artist</a>
                                             </td>
                                         </tr>
-                                    <?php
+                                        <?php
                                     }
                                 } else {
                                     ?>
                                     <tr>
-                                        <td colspan="7">No records found</td>
+                                        <td colspan="5">No records found</td>
                                     </tr>
-                                <?php
+                                    <?php
                                 }
                                 ?>
                             </tbody>
@@ -118,7 +113,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        <?php include_once('components/footer.php'); ?>
+        <?php include_once ('components/footer.php'); ?>
 
 
         <!-- Control Sidebar -->
@@ -151,11 +146,9 @@
     <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <script>
-        $(function() {
+        $(function () {
             $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
+                "responsive": true, "lengthChange": false, "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             /*     $('#example2').DataTable({

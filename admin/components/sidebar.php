@@ -35,8 +35,6 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
         <li class="nav-item menu-open">
           <a href="users.php" class="nav-link active">
             <i class="nav-icon far fa-plus-square"></i>
@@ -62,14 +60,6 @@
           </a>
         </li>
         <li class="nav-item menu-open">
-          <a href="artist.php" class="nav-link active">
-            <i class="nav-icon far fa-plus-square"></i>
-            <p>
-              Artist
-            </p>
-          </a>
-        </li>
-        <li class="nav-item menu-open">
           <a href="album.php" class="nav-link active">
             <i class="nav-icon far fa-plus-square"></i>
             <p>
@@ -78,10 +68,26 @@
           </a>
         </li>
         <li class="nav-item menu-open">
+          <a href="artist.php" class="nav-link active">
+            <i class="nav-icon far fa-plus-square"></i>
+            <p>
+              Music Artist
+            </p>
+          </a>
+        </li>
+        <li class="nav-item menu-open">
+          <a href="videoartist.php" class="nav-link active">
+            <i class="nav-icon far fa-plus-square"></i>
+            <p>
+              Video Artist
+            </p>
+          </a>
+        </li>
+        <li class="nav-item menu-open">
           <a href="musicgenre.php" class="nav-link active">
             <i class="nav-icon far fa-plus-square"></i>
             <p>
-               Music Genre
+              Music Genre
             </p>
           </a>
         </li>
