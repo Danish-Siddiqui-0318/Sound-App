@@ -82,12 +82,12 @@
                                 <Select id="video_artist" name="video_artist" class="form-control">
                                     <?php
                                     require_once ('db.php');
-                                    $query = "SELECT * FROM artist";
+                                    $query = "SELECT * FROM video_artist";
                                     $result = mysqli_query($connection, $query);
                                     if ($result->num_rows > 0) {
                                         while ($row = mysqli_fetch_assoc($result)) {
                                             ?>
-                                            <option value="<?php echo $row['artist_id'] ?>"><?php echo $row['artist_name'] ?>
+                                            <option value="<?php echo $row['id'] ?>"><?php echo $row['artist_name'] ?>
                                             </option>
                                             <?php
                                         }
@@ -116,7 +116,7 @@
                                 </Select>
                             </div>
                             <div class="form-group">
-                                <label for="video_year">Enter video Release Year</label>
+                                <label for="video_year">Enter video Release date</label>
                                 <input required type="text" class="form-control" id="video_year" name="video_year">
                             </div>
                             <div class="form-group">

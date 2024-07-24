@@ -1,11 +1,14 @@
 <?php
 require_once ('db.php');
-$temp_name = $_FILES['video_loc']['tmp_name'];
+$tempvideo_name = $_FILES['video_loc']['tmp_name'];
 $fileName = $_FILES['video_loc']['name'];
 $video = "video/$fileName";
-if (move_uploaded_file($temp_name, $video)) {
+$tempvideo_thumbnail = $_FILES['video_thumbnail']['tmp_name'];
+$thumbfilename = $_FILES['video_thumbnail']['name'];
+$thumbnail = "videothumbnail/$thumbfilename";
+
+if (move_uploaded_file($tempvideo_name, $video) && move_uploaded_file($tempvideo_thumbnail, $thumbnail)) {
     session_start();
-    $video_thumbnail = $_POST['video_thumbnail'];
     $video_title = $_POST['video_title'];
     $video_genre = $_POST['video_genre'];
     $video_description = $_POST['video_description'];
