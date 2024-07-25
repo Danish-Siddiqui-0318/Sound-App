@@ -71,7 +71,7 @@
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="exampleInputFile"
-                                                name="video_loc" accept="image/*" required>
+                                                name="video_thumbnail" accept="image/*" required>
                                             <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                         </div>
                                     </div>
@@ -117,7 +117,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="video_year">Enter video Release date</label>
-                                <input required type="text" class="form-control" id="video_year" name="video_year">
+                                <input required type="text" class="form-control" id="release_date" name="release_date">
                             </div>
                             <div class="form-group">
                                 <label for="video_title">Enter video Description</label>

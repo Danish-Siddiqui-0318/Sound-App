@@ -75,33 +75,31 @@
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="exampleInputFile"
-                                                name="video_loc" accept="image/*" required>
+                                                name="video_thumbnail" accept="image/*" required>
                                             <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="video_artist">Choose Artist Of video</label>
-                                    <Select id="video_artist" name="video_artist" class="form-control"
-                                        value="<?php echo $row['video_artist'] ?>">>
-                                        <?php
-                                        require_once ('db.php');
-                                        $query = "SELECT * FROM artist";
-                                        $result = mysqli_query($connection, $query);
-                                        if ($result->num_rows > 0) {
-                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                ?>
-                                                <option value="<?php echo $row['artist_id'] ?>">
-                                                    <?php echo $row['artist_name'] ?>
-                                                </option>
-                                                <?php
-                                            }
+                                <label for="video_artist">Choose Artist Of video</label>
+                                <Select id="video_artist" name="video_artist" class="form-control">
+                                    <?php
+                                    require_once ('db.php');
+                                    $query = "SELECT * FROM video_artist";
+                                    $result = mysqli_query($connection, $query);
+                                    if ($result->num_rows > 0) {
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                            ?>
+                                            <option value="<?php echo $row['id'] ?>"><?php echo $row['artist_name'] ?>
+                                            </option>
+                                            <?php
                                         }
-                                        ?>
+                                    }
+                                    ?>
 
-                                    </Select>
-                                </div>
+                                </Select>
+                            </div>
                                 <div class="form-group">
                                     <label for="video_genre">Choose Genre Of video</label>
                                     <Select id="video_genre" name="video_genre" class="form-control"
@@ -124,8 +122,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="release_year">Enter video Release Year</label>
-                                    <input required type="text" class="form-control" id="release_year" name="release_year"
-                                        value="<?php echo $row['release_year'] ?>">
+                                    <input required type="text" class="form-control" id="release_date" name="release_date"
+                                        value="<?php echo $row['release_date'] ?>">
                                 </div>
 
                                 <div class="form-group">

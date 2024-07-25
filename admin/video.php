@@ -72,8 +72,8 @@
                                 <tr>
                                     <th>Video Id</th>
                                     <th>Video Title</th>
-                                    <th>Video-Artist</th>
-                                    <th>Video-Genre</th>
+                                    <th>Video Artist</th>
+                                    <th>Video Genre</th>
                                     <th>Release Date</th>
                                     <th>Video Description</th>
                                     <th>Actions</th>
@@ -88,10 +88,10 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $row['id']; ?></td>
-                                            <td><?php echo $row['video_title']; ?></td>
                                             <td><?php echo $row['video_artist']; ?></td>
-                                            <td><?php echo $row['video_genre']; ?></td>
+                                            <td><?php echo $row['video_title']; ?></td>
                                             <td><?php echo $row['release_date']; ?></td>
+                                            <td><?php echo $row['video_genre']; ?></td>
                                             <td><?php echo $row['video_description']; ?></td>
                                             <td> <a href="editvideo.php?id=<?php echo $row['id']; ?>"
                                                     class="btn btn-sm btn-warning">
