@@ -1,5 +1,5 @@
 /*
-SQLyog Professional v13.1.1 (64 bit)
+SQLyog Ultimate v13.1.1 (64 bit)
 MySQL - 10.4.32-MariaDB : Database - sound-app
 *********************************************************************
 */
@@ -123,9 +123,14 @@ CREATE TABLE `video` (
   `video_genre` varchar(255) DEFAULT NULL,
   `video_description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `video` */
+
+insert  into `video`(`id`,`video_loc`,`video_artist`,`video_thumbnail`,`video_title`,`release_date`,`video_genre`,`video_description`) values 
+(1,'video/Imran Khan - Hattrick X Yaygo Musalini (Official Music Video).mp4','1','thumbnail/Screenshot 2024-07-18 125224.png','vlog','2022','2','my video'),
+(2,'video/Imran Khan - Hattrick X Yaygo Musalini (Official Music Video).mp4','1','thumbnail/Screenshot 2024-07-18 125224.png','vlog','2022','2','my video'),
+(3,'video/Printable Visiting Card Design in Ms Word Hindi Tutorial -- Business Card Design in Ms Word.mp4','1','thumbnail/Screenshot 2024-07-18 125201.png','vlog','2022','2','my video125');
 
 /*Table structure for table `video_artist` */
 
