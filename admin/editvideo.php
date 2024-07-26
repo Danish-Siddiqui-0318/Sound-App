@@ -33,7 +33,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Edit Genre</h1>
+                            <h1>Edit Videos</h1>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -45,11 +45,11 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Edit Genre</h3>
+                        <h3 class="card-title">Edit Video Details</h3>
 
                         <div class="card-tools">
-                            <a href="videogenre.php" class="btn btn btn-sm btn-primary">
-                                <i class="fas fa-plus"></i> View video Genre
+                            <a href="video.php" class="btn btn btn-sm btn-primary">
+                                <i class="fas fa-plus"></i> View video
                             </a>
                         </div>
                     </div>
@@ -58,7 +58,8 @@
                     $query = "SELECT * from video WHERE id=" . $_GET['id'];
                     $result = mysqli_query($connection, $query);
                     if ($result->num_rows > 0) {
-                        $row = mysqli_fetch_assoc($result);
+                        $row1 = mysqli_fetch_assoc($result);
+                        print_r($row1);
                     }
                     ?>
                     <form action="editvideoprocess.php" method="POST" enctype="multipart/form-data">
@@ -67,10 +68,10 @@
                                 <div class="form-group">
                                     <label for="video_title">Enter Video Title</label>
                                     <input required type="text" class="form-control" id="video_title" name="video_title"
-                                        value="<?php echo $row['video_title'] ?>">
+                                        value="<?php echo $row1['video_title'] ?>">
                                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
                                 </div>
-                                 <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="exampleInputFile">Enter Video Thumbnail</label>
                                     <div class="input-group">
                                         <div class="custom-file">
@@ -79,27 +80,27 @@
                                             <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="form-group">
-                                <label for="video_artist">Choose Artist Of video</label>
-                                <Select id="video_artist" name="video_artist" class="form-control">
-                                    <?php
-                                    require_once ('db.php');
-                                    $query = "SELECT * FROM video_artist";
-                                    $result = mysqli_query($connection, $query);
-                                    if ($result->num_rows > 0) {
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            ?>
-                                            <option value="<?php echo $row['id'] ?>"><?php echo $row['artist_name'] ?>
-                                            </option>
-                                            <?php
+                                    <label for="video_artist">Choose Artist Of video</label>
+                                    <Select id="video_artist" name="video_artist" class="form-control">
+                                        <?php
+                                        require_once ('db.php');
+                                        $query = "SELECT * FROM video_artist";
+                                        $result = mysqli_query($connection, $query);
+                                        if ($result->num_rows > 0) {
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                ?>
+                                                <option value="<?php echo $row['id'] ?>"><?php echo $row['artist_name'] ?>
+                                                </option>
+                                                <?php
+                                            }
                                         }
-                                    }
-                                    ?>
+                                        ?>
 
-                                </Select>
-                            </div>
+                                    </Select>
+                                </div>
                                 <div class="form-group">
                                     <label for="video_genre">Choose Genre Of video</label>
                                     <Select id="video_genre" name="video_genre" class="form-control"
@@ -121,20 +122,20 @@
                                     </Select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="release_year">Enter video Release Year</label>
-                                    <input required type="text" class="form-control" id="release_date" name="release_date"
-                                        value="<?php echo $row['release_date'] ?>">
+                                    <label for="release_date">Enter video Release Date</label>
+                                    <input required type="text" class="form-control" id="release_date"
+                                        name="release_date" value="<?php echo $row1['release_date'] ?>">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="video_description">Edit Video Description</label>
-                                    <input required type="text" class="form-control" id="video_title" name="video_description"
-                                        value="<?php echo $row['video_description'] ?>">
-                                    <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+                                    <input required type="text" class="form-control" id="video_description"
+                                        name="video_description" value="<?php echo $row1['video_description'] ?>">
+                                    <input type="hidden" name="id" value="<?php echo $row1['id'] ?>">
                                 </div>
-                                
-                               
-                               
+
+
+
                                 <!-- <div class="form-group">
                                     <label for="exampleInputFile">Add video</label>
                                     <div class="input-group">

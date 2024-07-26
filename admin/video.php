@@ -81,17 +81,20 @@
                             </thead>
                             <tbody>
                                 <?php
-                                $query = "SELECT * FROM video";
+                                $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
+                                FROM video
+                                INNER JOIN video_artist ON video.video_artist = video_artist.id
+                                INNER JOIN videogenre ON videogenre.id = video.video_genre;";
                                 $result = mysqli_query($connection, $query);
                                 if ($result->num_rows > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         ?>
                                         <tr>
                                             <td><?php echo $row['id']; ?></td>
-                                            <td><?php echo $row['video_artist']; ?></td>
                                             <td><?php echo $row['video_title']; ?></td>
+                                            <td><?php echo $row['artist_name']; ?></td>
+                                            <td><?php echo $row['video_genre_name']; ?></td>
                                             <td><?php echo $row['release_date']; ?></td>
-                                            <td><?php echo $row['video_genre']; ?></td>
                                             <td><?php echo $row['video_description']; ?></td>
                                             <td> <a href="editvideo.php?id=<?php echo $row['id']; ?>"
                                                     class="btn btn-sm btn-warning">

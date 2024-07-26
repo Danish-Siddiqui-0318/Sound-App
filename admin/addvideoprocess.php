@@ -16,7 +16,6 @@ if (move_uploaded_file($tempvideo_name, $video) && move_uploaded_file($tempvideo
     $video_genre = $_POST['video_genre'];
     $video_description = $_POST['video_description'];
 
-
     $query = "INSERT INTO video (video_loc,video_thumbnail,video_title,video_genre,video_description,release_date,video_artist) VALUES ('" . $video . "','" . $thumbnail . "','" . $video_title . "','" . $video_genre . "','" . $video_description . "','" . $release_year . "','" . $video_artist . "')";
     $result = mysqli_query($connection, $query);
 
