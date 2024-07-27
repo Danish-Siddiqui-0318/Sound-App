@@ -41,7 +41,10 @@
    <!-- banner section end -->
    <?php
    require_once ('admin/db.php');
-   $query = "SELECT * FROM video LIMIT 1 ";
+   $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
+   FROM video
+   INNER JOIN video_artist ON video.video_artist = video_artist.id
+   INNER JOIN videogenre ON videogenre.id = video.video_genre  LIMIT 1";
    $result = mysqli_query($connection, $query);
    $Carouselrow = mysqli_fetch_assoc($result);
    ?>
@@ -55,7 +58,8 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(1.6px);
 -webkit-backdrop-filter: blur(1.6px);
 border: 1px solid rgba(255, 255, 255, 0.49);">
-               <div class="banner_taital">Enjoy <br><?php echo $Carouselrow['video_title'] ?></div>
+               <div class="banner_taital">Enjoy <br><?php echo $Carouselrow['video_title'] ?> With <br>
+                  <?php echo $Carouselrow['artist_name'] ?></div>
                <p class="banner_text"><?php echo $Carouselrow['video_description'] ?> </p>
                <div class="see_bt"><a href="#">See More</a></div>
             </div>
