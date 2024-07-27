@@ -127,6 +127,16 @@
                                 </Select>
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputFile">Add Music Thumbnail</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="exampleInputFile"
+                                            name="music_thumbnail" accept="image/*" required>
+                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputFile">Add Music</label>
                                 <div class="input-group">
                                     <div class="custom-file">

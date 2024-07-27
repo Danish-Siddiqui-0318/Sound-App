@@ -1,5 +1,5 @@
 /*
-SQLyog Ultimate v13.1.1 (64 bit)
+SQLyog Professional v13.1.1 (64 bit)
 MySQL - 10.4.32-MariaDB : Database - sound-app
 *********************************************************************
 */
@@ -27,13 +27,14 @@ CREATE TABLE `album` (
   `album_photo` varchar(255) DEFAULT NULL,
   `releaseyear` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `album` */
 
 insert  into `album`(`id`,`album_name`,`artist`,`album_photo`,`releaseyear`) values 
 (3,'Vaaqif','5','albumimage/maxresdefault.jpg','2021'),
-(4,'1989 (Taylor Version)','3','albumimage/1691649276596_ELLEHEAD-2023-08-10T163406.015.jpg','2023');
+(4,'1989 (Taylor Version)','3','albumimage/1691649276596_ELLEHEAD-2023-08-10T163406.015.jpg','2023'),
+(5,'Future Nostalgia','7','albumimage/duaAlbum.jpg','2020');
 
 /*Table structure for table `artist` */
 
@@ -44,14 +45,15 @@ CREATE TABLE `artist` (
   `artist_name` varchar(255) DEFAULT NULL,
   `artist_image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`artist_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `artist` */
 
 insert  into `artist`(`artist_id`,`artist_name`,`artist_image`) values 
 (3,'Taylor Swift','artist_image/GettyImages-1987932445.jpeg'),
 (4,'Ed Sheeran','artist_image/Ed_Sheeran-6886_(cropped).jpg'),
-(5,'The Local Train','artist_image/63414571.jpeg');
+(5,'The Local Train','artist_image/63414571.jpeg'),
+(7,'Dua Lipa','artist_image/dua.jpeg');
 
 /*Table structure for table `music` */
 
@@ -61,18 +63,20 @@ CREATE TABLE `music` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `music_loc` varchar(255) DEFAULT NULL,
   `music_title` varchar(255) DEFAULT NULL,
+  `music_thumbnail` varchar(255) DEFAULT NULL,
   `music_year` varchar(255) DEFAULT NULL,
   `music_artist` varchar(255) DEFAULT NULL,
   `music_album` varchar(255) DEFAULT NULL,
   `music_genre` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `music` */
 
-insert  into `music`(`id`,`music_loc`,`music_title`,`music_year`,`music_artist`,`music_album`,`music_genre`) values 
-(1,'music/[SPOTIFY-DOWNLOADER.COM] Aaoge Tum Kabhi.mp3','Aoge Tum Kabhi','2015','3','3','4'),
-(2,'music/spotifydown.com - Blank Space.mp3','Blank Space','2023','3','4','3');
+insert  into `music`(`id`,`music_loc`,`music_title`,`music_thumbnail`,`music_year`,`music_artist`,`music_album`,`music_genre`) values 
+(6,'music/spotifydown.com - Blank Space.mp3','Blank Space','music_thumbnail/sddefault.jpg','2023','3','4','3'),
+(7,'music/spotifydown.com - Levitating.mp3','Levitating','music_thumbnail/levidua.jpg','2020','7','5','3'),
+(8,'music/[SPOTIFY-DOWNLOADER.COM] Aaoge Tum Kabhi.mp3','Aoge Tum Kabhi','music_thumbnail/jkh.jpg','2017','5','3','4');
 
 /*Table structure for table `musicgenre` */
 
@@ -123,14 +127,12 @@ CREATE TABLE `video` (
   `video_genre` varchar(255) DEFAULT NULL,
   `video_description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `video` */
 
 insert  into `video`(`id`,`video_loc`,`video_artist`,`video_thumbnail`,`video_title`,`release_date`,`video_genre`,`video_description`) values 
-(1,'video/Imran Khan - Hattrick X Yaygo Musalini (Official Music Video).mp4','1','thumbnail/Screenshot 2024-07-18 125224.png','vlog','2022','2','my video'),
-(2,'video/Imran Khan - Hattrick X Yaygo Musalini (Official Music Video).mp4','1','thumbnail/Screenshot 2024-07-18 125224.png','vlog','2022','2','my video'),
-(3,'video/Printable Visiting Card Design in Ms Word Hindi Tutorial -- Business Card Design in Ms Word.mp4','1','thumbnail/Screenshot 2024-07-18 125201.png','vlog','2022','2','my video125');
+(1,'video/videoplayback.mp4','5','thumbnail/brb.jpg','$1 Job vs$1000000 JOB','2023','2','Mrbeast video');
 
 /*Table structure for table `video_artist` */
 
@@ -141,13 +143,13 @@ CREATE TABLE `video_artist` (
   `artist_name` varchar(255) DEFAULT NULL,
   `artist_img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `video_artist` */
 
 insert  into `video_artist`(`id`,`artist_name`,`artist_img`) values 
-(1,'MrBeast','video_artist_image/107362612-1705955518431-gettyimages-1247748364-AFP_33AK2JG.jpeg'),
-(4,'Dhurv Rathee','video_artist_image/dhurv.jpeg');
+(5,'MrBeast','video_artist_image/8703abf0-2180-11ef-9628-ff2abcc9602e.jpg'),
+(6,'Dhurv Rathee','video_artist_image/dhurv.jpeg');
 
 /*Table structure for table `videogenre` */
 

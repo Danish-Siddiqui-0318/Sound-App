@@ -3,3 +3,11 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+.carouselbtn{
+   
+    background-color: #006600;
+
+}
+.carouselbtn:hover{
+    color: #4CBB17; 
+}

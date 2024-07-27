@@ -61,7 +61,8 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                <div class="banner_taital">Enjoy <br><?php echo $Carouselrow['video_title'] ?> With <br>
                   <?php echo $Carouselrow['artist_name'] ?></div>
                <p class="banner_text"><?php echo $Carouselrow['video_description'] ?> </p>
-               <div class="see_bt"><a href="#">See More</a></div>
+               <div class="see_bt"><a href="#" class="carouselbtn" style="background-color: #138808 ;" * />See More</a>
+               </div>
             </div>
             <div class="col-md-6">
                <div class="play_icon"><a href="#"><img src="images/play-icon.png"></a></div>
