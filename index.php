@@ -10,12 +10,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
-   <title>DBI</title>
+   <title>Sound - The App For Music And Video</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
-   <!-- bootstrap css -->
-   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
    <!-- style css -->
    <link rel="stylesheet" type="text/css" href="css/style.css">
    <!-- Responsive-->
@@ -32,6 +30,9 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+   <!-- bootstrap css -->
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -65,7 +66,8 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                </div>
             </div>
             <div class="col-md-6">
-               <div class="play_icon"><a href="#"><img src="images/play-icon.png"></a></div>
+               <div class="play_icon"><a href="admin/<?php $Carouselrow['video_loc'] ?>"><img
+                        src="images/play-icon.png"></a></div>
             </div>
          </div>
       </div>
@@ -115,7 +117,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
    </div>
    <!-- arrival section end -->
    <!-- movies section start -->
-   <div class="movies_section layout_padding">
+   <div class="movies_section layout_padding" style="background-color: black;">
       <div class="container">
          <div class="movies_menu">
             <ul>
@@ -130,7 +132,9 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
             </ul>
          </div>
          <div class="movies_section_2 layout_padding">
-            <h2 class="letest_text">Letest Movies</h2>
+            <h2 class="letest_text">Latest Movies<span class="badge rounded-pill  mx-2 text-bg-primary"
+                  style="background-color:#138808 ;color:white;border-radius: 40%;">New</span>
+            </h2>
             <div class="seemore_bt"><a href="#">See More</a></div>
             <div class="movies_main">
                <div class="iamge_movies_main">
@@ -233,7 +237,8 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
             </div>
          </div>
          <div class="movies_section_2 layout_padding">
-            <h2 class="letest_text">TV Shows</h2>
+            <h2 class="letest_text">TV Shows<span class="badge rounded-pill  mx-2 text-bg-primary"
+                  style="background-color:#138808 ;color:white;border-radius: 40%;">New</span></h2>
             <div class="seemore_bt"><a href="#">See More</a></div>
             <div class="movies_main">
                <div class="iamge_movies_main">
@@ -335,7 +340,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                </div>
             </div>
          </div>
-         <div class="movies_section_2 layout_padding">
+         <!-- <div class="movies_section_2 layout_padding">
             <h2 class="letest_text">Sports</h2>
             <div class="seemore_bt"><a href="#">See More</a></div>
             <div class="movies_main">
@@ -437,7 +442,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                   </div>
                </div>
             </div>
-         </div>
+         </div> -->
          <div class="seebt_1"><a href="#">See More</a></div>
       </div>
    </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aptech Ecommerce | Products</title>
+    <title>Sound - The App For Music And Video</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -59,7 +59,6 @@
                     $result = mysqli_query($connection, $query);
                     if ($result->num_rows > 0) {
                         $row1 = mysqli_fetch_assoc($result);
-                        print_r($row1);
                     }
                     ?>
                     <form action="editvideoprocess.php" method="POST" enctype="multipart/form-data">
@@ -69,7 +68,7 @@
                                     <label for="video_title">Enter Video Title</label>
                                     <input required type="text" class="form-control" id="video_title" name="video_title"
                                         value="<?php echo $row1['video_title'] ?>">
-                                    <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+                                    <input type="hidden" name="id" value="<?php echo $row1['id'] ?>">
                                 </div>
                                 <!-- <div class="form-group">
                                     <label for="exampleInputFile">Enter Video Thumbnail</label>
