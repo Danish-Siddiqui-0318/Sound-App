@@ -151,12 +151,12 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                               <img src="admin/<?php echo $musicrow['music_thumbnail'] ?>" class="image img-fluid"
                                  style="width:100%">
                               <div class="middle">
-                                 <div class="playnow_bt">Play Now</div>
+                                 <div class="playnow_bt"><a href="" style="cursor: pointer;">Play Now</a></div>
                               </div>
                            </div>
                            <h1 class="code_text"><?php echo $musicrow['music_title'] ?></h1>
                            <p class="there_text">Artist Name : <?php echo $musicrow['artist_name'] ?> </p>
-                           <p class="there_text">Music Genre : <?php echo $musicrow['music_genre_name']?> </p>
+                           <p class="there_text">Music Genre : <?php echo $musicrow['music_genre_name'] ?> </p>
                            <div class="star_icon">
                               <ul>
                                  <li><a href="#"><img src="images/star-icon.png"></a></li>
@@ -171,88 +171,11 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                      }
                   }
                   ?>
-
-                  <!-- <div class="iamge_movies">
-                     <div class="image_3">
-                        <img src="images/img-4.png" class="image" style="width:100%">
-                        <div class="middle">
-                           <div class="playnow_bt">Play Now</div>
-                        </div>
-                     </div>
-                     <h1 class="code_text">Bradon</h1>
-                     <p class="there_text">There are many variations </p>
-                     <div class="star_icon">
-                        <ul>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                        </ul>
-                     </div>
-                  </div> -->
-                  <!-- <div class="iamge_movies">
-                     <div class="image_3">
-                        <img src="images/img-5.png" class="image" style="width:100%">
-                        <div class="middle">
-                           <div class="playnow_bt">Play Now</div>
-                        </div>
-                     </div>
-                     <h1 class="code_text">Anton Levin</h1>
-                     <p class="there_text">There are many variations </p>
-                     <div class="star_icon">
-                        <ul>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                        </ul>
-                     </div>
-                  </div> -->
-                  <!-- <div class="iamge_movies">
-                     <div class="image_3">
-                        <img src="images/img-6.png" class="image" style="width:100%">
-                        <div class="middle">
-                           <div class="playnow_bt">Play Now</div>
-                        </div>
-                     </div>
-                     <h1 class="code_text">Sacha Styles</h1>
-                     <p class="there_text">There are many variations </p>
-                     <div class="star_icon">
-                        <ul>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                        </ul>
-                     </div>
-                  </div> -->
-                  <!-- <div class="iamge_movies">
-                     <div class="image_3">
-                        <img src="images/img-7.png" class="image" style="width:100%">
-                        <div class="middle">
-                           <div class="playnow_bt">Play Now</div>
-                        </div>
-                     </div>
-                     <h1 class="code_text">Katledrazdu</h1>
-                     <p class="there_text">There are many variations </p>
-                     <div class="star_icon">
-                        <ul>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                        </ul>
-                     </div>
-                  </div> -->
                </div>
             </div>
          </div>
          <div class="movies_section_2 layout_padding">
-            <h2 class="letest_text">TV Shows<span class="badge rounded-pill  mx-2 text-bg-primary"
+            <h2 class="letest_text">Latest Video<span class="badge rounded-pill  mx-2 text-bg-primary"
                   style="background-color:#138808 ;color:white;border-radius: 40%;">New</span></h2>
             <div class="seemore_bt"><a href="#">See More</a></div>
             <div class="movies_main">
@@ -500,36 +423,9 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
    </div>
    <!-- cooming  section end -->
    <!-- footer  section start -->
-   <div class="footer_section layout_padding">
-      <div class="container">
-         <div class="footer_menu">
-            <ul>
-               <li><a href="index.html">Home</a></li>
-               <li><a href="movies.html">Movies</a></li>
-               <li><a href="tv.html">TV</a></li>
-               <li><a href="celebs.html">Celebs</a></li>
-               <li><a href="#">Sports</a></li>
-               <li><a href="#">News</a></li>
-            </ul>
-         </div>
-         <div class="social_icon">
-            <ul>
-               <li><a href="#"><img src="images/fb-icon.png"></a></li>
-               <li><a href="#"><img src="images/twitter-icon.png"></a></li>
-               <li><a href="#"><img src="images/linkedin-icon.png"></a></li>
-               <li><a href="#"><img src="images/instagram-icon.png"></a></li>
-            </ul>
-         </div>
-      </div>
-   </div>
+   <?php require_once ('components/footer.php') ?>
    <!-- footer  section end -->
    <!-- copyright section start -->
-   <div class="copyright_section">
-      <div class="container">
-         <div class="copyright_text">Copyright 2019 All Right Reserved By <a href="https://html.design">Free html
-               Templates</a></div>
-      </div>
-   </div>
    <!-- copyright section end -->
    <!-- Javascript files-->
    <script src="js/jquery.min.js"></script>
