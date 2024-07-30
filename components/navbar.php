@@ -17,17 +17,17 @@ if (!isset($_SESSION['user'])) {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-               <a class="nav-link" href="index.html">Home</a>
+               <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
                <a class="nav-link" href="music.php">Music</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="tv.html">TV</a>
+               <a class="nav-link" href="video.php">Videos</a>
             </li>
-            <li class="nav-item">
-               <a class="nav-link" href="celebs.html">Celebs</a>
-            </li>
+            <!-- <li class="nav-item">
+               <a class="nav-link" href="album.html">Celebs</a>
+            </li> -->
          </ul>
          <div class="search_icon"><a href="logout.php"><img src="images/user-icon.png"><span
                   class="padding_left_15">logout</span></a></div>
