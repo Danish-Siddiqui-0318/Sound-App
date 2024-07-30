@@ -48,7 +48,7 @@
                         <h3 class="card-title">Edit Genre</h3>
 
                         <div class="card-tools">
-                            <a href="musicgenre.php" class="btn btn btn-sm btn-primary">
+                            <a href="music.php" class="btn btn btn-sm btn-primary">
                                 <i class="fas fa-plus"></i> View Music Genre
                             </a>
                         </div>

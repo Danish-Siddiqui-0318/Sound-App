@@ -132,32 +132,47 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
             </ul>
          </div>
          <div class="movies_section_2 layout_padding">
-            <h2 class="letest_text">Latest Movies<span class="badge rounded-pill  mx-2 text-bg-primary"
+            <h2 class="letest_text">Latest Music<span class="badge rounded-pill  mx-2 text-bg-primary"
                   style="background-color:#138808 ;color:white;border-radius: 40%;">New</span>
             </h2>
             <div class="seemore_bt"><a href="#">See More</a></div>
             <div class="movies_main">
                <div class="iamge_movies_main">
-                  <div class="iamge_movies">
-                     <div class="image_3">
-                        <img src="images/img-3.png" class="image" style="width:100%">
-                        <div class="middle">
-                           <div class="playnow_bt">Play Now</div>
+                  <?php
+                  require_once ('admin/db.php');
+                  $musicQuery = "SELECT music.*,artist.artist_name, artist.artist_image, album.album_name, album.album_photo, album.releaseyear,musicgenre.music_genre_name FROM music INNER JOIN artist ON music.music_artist= artist.artist_id INNER JOIN album ON music.music_album = album.id INNER JOIN musicgenre ON music.music_genre = musicgenre.id ORDER BY music.`id` DESC
+                  LIMIT 4 ";
+                  $musicResult = mysqli_query($connection, $musicQuery);
+                  if ($musicResult->num_rows > 0) {
+                     while ($musicrow = mysqli_fetch_assoc($musicResult)) {
+                        ?>
+                        <div class="iamge_movies">
+                           <div class="image_3">
+                              <img src="admin/<?php echo $musicrow['music_thumbnail'] ?>" class="image img-fluid"
+                                 style="width:100%">
+                              <div class="middle">
+                                 <div class="playnow_bt">Play Now</div>
+                              </div>
+                           </div>
+                           <h1 class="code_text"><?php echo $musicrow['music_title'] ?></h1>
+                           <p class="there_text">Artist Name : <?php echo $musicrow['artist_name'] ?> </p>
+                           <p class="there_text">Music Genre : <?php echo $musicrow['music_genre_name']?> </p>
+                           <div class="star_icon">
+                              <ul>
+                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
+                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
+                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
+                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
+                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
+                              </ul>
+                           </div>
                         </div>
-                     </div>
-                     <h1 class="code_text">CADE Prlor</h1>
-                     <p class="there_text">There are many variations </p>
-                     <div class="star_icon">
-                        <ul>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                           <li><a href="#"><img src="images/star-icon.png"></a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="iamge_movies">
+                        <?php
+                     }
+                  }
+                  ?>
+
+                  <!-- <div class="iamge_movies">
                      <div class="image_3">
                         <img src="images/img-4.png" class="image" style="width:100%">
                         <div class="middle">
@@ -175,8 +190,8 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                            <li><a href="#"><img src="images/star-icon.png"></a></li>
                         </ul>
                      </div>
-                  </div>
-                  <div class="iamge_movies">
+                  </div> -->
+                  <!-- <div class="iamge_movies">
                      <div class="image_3">
                         <img src="images/img-5.png" class="image" style="width:100%">
                         <div class="middle">
@@ -194,8 +209,8 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                            <li><a href="#"><img src="images/star-icon.png"></a></li>
                         </ul>
                      </div>
-                  </div>
-                  <div class="iamge_movies">
+                  </div> -->
+                  <!-- <div class="iamge_movies">
                      <div class="image_3">
                         <img src="images/img-6.png" class="image" style="width:100%">
                         <div class="middle">
@@ -213,8 +228,8 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                            <li><a href="#"><img src="images/star-icon.png"></a></li>
                         </ul>
                      </div>
-                  </div>
-                  <div class="iamge_movies">
+                  </div> -->
+                  <!-- <div class="iamge_movies">
                      <div class="image_3">
                         <img src="images/img-7.png" class="image" style="width:100%">
                         <div class="middle">
@@ -232,7 +247,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                            <li><a href="#"><img src="images/star-icon.png"></a></li>
                         </ul>
                      </div>
-                  </div>
+                  </div> -->
                </div>
             </div>
          </div>

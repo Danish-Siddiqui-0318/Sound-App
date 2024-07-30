@@ -20,7 +20,7 @@ if (!isset($_SESSION['user'])) {
                <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="movies.html">Movies</a>
+               <a class="nav-link" href="music.php">Music</a>
             </li>
             <li class="nav-item">
                <a class="nav-link" href="tv.html">TV</a>
