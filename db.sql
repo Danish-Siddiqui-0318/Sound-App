@@ -31,22 +31,6 @@ CREATE TABLE `album` (
 
 /*Data for the table `album` */
 
-insert  into `album`(`id`,`album_name`,`artist`,`album_photo`,`releaseyear`) values 
-(7,'one kiss (with Dua lipa)','8','albumimage/One-Kiss.jpg','2021'),
-(8,'Mere Humsafar','9','albumimage/Mere-Humsafar.jpg','2022'),
-(9,'Kahani Suno 2.0','10','albumimage/kahani suno 2.0.jpg','2022'),
-(10,'Ik Lamha','11','albumimage/ik lamha.jpg','2021'),
-(11,'Habibi','12','albumimage/habibi.jpg','2022'),
-(12,'Arcad','8','albumimage/arcad.jpeg','2019'),
-(13,'Balla Ciao (money heist)','14','albumimage/bala chao song.jpg','2018'),
-(14,'What if i said','15','albumimage/what if i.jpeg','2018'),
-(15,'Sia this is acting','8','albumimage/sia this is acting.jpg','2016'),
-(16,'Shekayat','17','albumimage/shekayat.jpg','2023'),
-(17,'Safe Heaven','18','albumimage/safe heaven.jpeg','2017'),
-(18,'Arjiti Dunki','19','albumimage/dunki.jpg','2024'),
-(19,'Samhjo Na','20','albumimage/samjho na.jpg','2022'),
-(20,'one republic vol 1','21','albumimage/ain worried.jpg','2022');
-
 /*Table structure for table `artist` */
 
 DROP TABLE IF EXISTS `artist`;
@@ -61,20 +45,10 @@ CREATE TABLE `artist` (
 /*Data for the table `artist` */
 
 insert  into `artist`(`artist_id`,`artist_name`,`artist_image`) values 
-(8,'Dua Lipa','artist_image/dua-lipa.jpg'),
-(9,'Yashal Shahid','artist_image/yashal shahid.jpg'),
-(10,'Kaifi Khalil','artist_image/kaifi khalil.jpeg'),
-(11,'Azan Sami Khan','artist_image/azan sami.jpg'),
-(12,'Asim Azhar','artist_image/asim azhar.jpg'),
-(13,'Duncan Laurence ','artist_image/duncan lurence.jpg'),
-(14,'Manu Pilas','artist_image/manu pilas.jpg'),
-(15,'jhonny orlando','artist_image/Johnny-Orlando.jpg'),
-(16,'Sia','artist_image/sia.jpg'),
-(17,'AUR','artist_image/aur.jpg'),
-(18,'Ruth B','artist_image/ruth b.jpeg'),
-(19,'Arjit Singh','artist_image/arjit sing.jpg'),
-(20,'Aditya Rikhari','artist_image/Aditya_Rikhari.jpg'),
-(21,'One Republic','artist_image/one repub.jpg');
+(3,'Taylor Swift','artist_image/GettyImages-1987932445.jpeg'),
+(4,'Ed Sheeran','artist_image/Ed_Sheeran-6886_(cropped).jpg'),
+(5,'The Local Train','artist_image/63414571.jpeg'),
+(7,'Dua Lipa','artist_image/dua.jpeg');
 
 /*Table structure for table `music` */
 
@@ -95,20 +69,10 @@ CREATE TABLE `music` (
 /*Data for the table `music` */
 
 insert  into `music`(`id`,`music_loc`,`music_title`,`music_thumbnail`,`music_year`,`music_artist`,`music_album`,`music_genre`) values 
-(10,'music/One Kiss (with Dua Lipa).mp3','one kiss','music_thumbnail/One-Kiss.jpg','2018','8','7','3'),
-(11,'music/Levitating.mp3','levitating (Dua lipa)','music_thumbnail/levetating.jpg','2020','8','7','3'),
-(12,'music/Mere Humsafar (Original Score) [Female Version].mp3','Mara Humsafar','music_thumbnail/Mere-Humsafar.jpg','2022','9','8','5'),
-(13,'music/Kahani Suno 2.0.mp3','Kahani Suno','music_thumbnail/kahani suno.jpeg','2022','10','7','4'),
-(14,'music/Ik Lamha.mp3','Ik Lamha','music_thumbnail/ik lamha.jpg','2021','11','10','5'),
-(15,'music/Habibi.mp3','Habibi','music_thumbnail/habibi song.jpeg','2022','12','11','3'),
-(16,'music/Arcade.mp3','loving you is losing game','music_thumbnail/arcad song.jpg','2019','13','7','4'),
-(17,'music/ Money Heist.mp3','Bella ciao','music_thumbnail/bala chao.jpg','2018','14','13','6'),
-(18,'music/What If (I Told You I Like You).mp3','What if (i told you i like you)','music_thumbnail/what if i.jpeg','2018','15','14','5'),
-(19,'music/Unstoppable.mp3','Unstoppable ','music_thumbnail/unstop.jpg','2018','16','15','3'),
-(20,'music/Shikayat.mp3','Shekayat','music_thumbnail/shekayat song.jpg','2023','17','16','4'),
-(21,'music/Dandelions.mp3','Dandelions','music_thumbnail/dandlions.jpg','2017','18','17','5'),
-(22,'music/O Maahi.mp3','O Maahi','music_thumbnail/o mahee.jpg','2023','19','18','5'),
-(23,'music/[SPOTIFY-DOWNLOADER.COM] Samjho Na.mp3','Samjho Na','music_thumbnail/samjho na.jpg','2022','20','19','5');
+(6,'music/spotifydown.com - Blank Space.mp3','Blank Space','music_thumbnail/sddefault.jpg','2023','3','4','3'),
+(7,'music/spotifydown.com - Levitating.mp3','Levitating','music_thumbnail/levidua.jpg','2020','7','5','3'),
+(8,'music/[SPOTIFY-DOWNLOADER.COM] Aaoge Tum Kabhi.mp3','Aoge Tum Kabhi','music_thumbnail/jkh.jpg','2017','5','3','4'),
+(9,'music/spotifydown.com - Perfect.mp3','Perfect','music_thumbnail/9a22fbaa1c35182063a67cae7913175c.jpg','2017','4','6','3');
 
 /*Table structure for table `musicgenre` */
 
@@ -124,9 +88,7 @@ CREATE TABLE `musicgenre` (
 
 insert  into `musicgenre`(`id`,`music_genre_name`) values 
 (3,'pop music'),
-(4,'Sad '),
-(5,'Romantic'),
-(6,'Folk');
+(4,'Sad ');
 
 /*Table structure for table `users` */
 
@@ -165,9 +127,6 @@ CREATE TABLE `video` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `video` */
-
-insert  into `video`(`id`,`video_loc`,`video_artist`,`video_thumbnail`,`video_title`,`release_date`,`video_genre`,`video_description`) values 
-(1,'video/videoplayback.mp4','5','thumbnail/brb.jpg','$1 Job vs$1000000 JOB','2023','2',' In this MrBeast video, participants experience the stark contrast between a job that pays $1 and one that pays $10,000,000, highlighting the differences in tasks, responsibilities, and lifestyles associated with each role.');
 
 /*Table structure for table `video_artist` */
 
