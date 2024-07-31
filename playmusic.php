@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="playmusic.css">
+    <link rel="stylesheet" href="css/plyr.css" />
 </head>
 
 <body>
@@ -51,9 +52,15 @@
         $row = mysqli_fetch_assoc($result);
     }
     ?>
-    <img src="admin/<?php echo $row['music_thumbnail'] ?>" class="img-fluid">
-    <audio src="admin/<?php echo $row['music_loc'] ?>" controls>
-    </audio>
+<!--     <img src="admin/<?php echo $row['music_thumbnail'] ?>" class="img-fluid">
+ -->   <!--  <audio src="admin/<?php echo $row['music_loc'] ?>" controls>
+    </audio> -->
+    <video id="player" playsinline controls data-poster="admin/<?php echo $row['music_thumbnail'] ?>">
+        <source src="admin/<?php echo $row['music_loc'] ?>" type="video/mp4" />
+        <!-- Captions are optional -->
+        <!--   <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
+        -->
+        </video>
 
 
     <!-- footer  section start -->
@@ -71,12 +78,18 @@
     <script src="js/owl.carousel.js"></script>
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
         });
     </script>
-    <script src="playmusic.js"></script>
+    <script src="js/plyr.js"></script>
+    <script>
+        const player = new Plyr('#player');
+
+        player.stop();
+    </script>
 </body>
 
 </html>
