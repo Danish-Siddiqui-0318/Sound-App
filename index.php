@@ -95,7 +95,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                         <div class="iamge_movies">
                            <div class="image_3">
                               <img src="admin/<?php echo $musicrow['music_thumbnail'] ?>" class="image img-fluid"
-                                 style="width:100%">
+                                 style="width:100%;aspect-ratio: 3/4; object-fit: contain;">
                               <div class="middle">
                                  <div class="playnow_bt" style="background-color: green;"><a
                                        href="playmusic.php?id=<?php echo $musicrow['id'] ?>"

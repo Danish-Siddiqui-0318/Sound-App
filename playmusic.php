@@ -64,7 +64,11 @@
                         <h1 class="text-center text-capitalize"><?php echo $row['music_title'] ?></h1>
                     </div>
                     <div class="col-md-12">
-                        <h3 class="text-center text-capitalize">Singer:<?php echo $row['artist_name'] ?></h3>
+                        <h3 class="text-center text-capitalize">Singer : <?php echo $row['artist_name'] ?></h3>
+                    </div>
+                    <div class="col-md-12">
+                        <h3 class="text-center text-capitalize">Album : <?php echo $row['album_name'] ?><br>Release Year
+                            : <?php echo $row['releaseyear'] ?></h3>
                     </div>
                 </div>
             </div>
