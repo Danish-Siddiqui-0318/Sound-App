@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="css/plyr.css" />
 </head>
 
-<body>
+<body style="background-color: black;color: white;">
 
     <!-- Navbar HERE-->
     <?php require_once ('components/navbar.php') ?>
@@ -52,15 +52,30 @@
         $row = mysqli_fetch_assoc($result);
     }
     ?>
-<!--     <img src="admin/<?php echo $row['music_thumbnail'] ?>" class="img-fluid">
- -->   <!--  <audio src="admin/<?php echo $row['music_loc'] ?>" controls>
-    </audio> -->
-    <video id="player" playsinline controls data-poster="admin/<?php echo $row['music_thumbnail'] ?>">
-        <source src="admin/<?php echo $row['music_loc'] ?>" type="video/mp4" />
-        <!-- Captions are optional -->
-        <!--   <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
-        -->
-        </video>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 mt-4">
+                <img src="admin/<?php echo $row['music_thumbnail'] ?>" class="img-thumbnail" style="height: 80vh;">
+            </div>
+            <div class="col-md-6" style="display: flex;justify-content: center;align-items: center;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center text-capitalize"><?php echo $row['music_title'] ?></h1>
+                    </div>
+                    <div class="col-md-12">
+                        <h3 class="text-center text-capitalize">Singer:<?php echo $row['artist_name'] ?></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 my-4" style="background-color: black;color: green;">
+                <audio id="player" controls>
+                    <source src="admin/<?php echo $row['music_loc'] ?>" type="audio/mp3" />
+                </audio>
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- footer  section start -->
@@ -78,7 +93,7 @@
     <script src="js/owl.carousel.js"></script>
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    
+
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'

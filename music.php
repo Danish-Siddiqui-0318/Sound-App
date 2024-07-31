@@ -51,18 +51,20 @@
             if ($result->num_rows > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     ?>
+
                     <div class="col-md-4 my-5">
-                        <div class="card"
-                            style="background-image: url('admin/<?php echo $row['music_thumbnail'] ?>');background-size: cover;background-repeat: no-repeat;background-position: center center; width:80%;">
-                            <div class="card-details ">
-                                <p class="text-title text-white text-capitalize"><?php echo $row['music_title'] ?></p>
-                                <p class="text-white text-capitalize" style="font-weight: bolder;">Album Name
-                                    <?php echo $row['album_name'] ?>
-                                </p>
+                        <a href="playmusic.php?id=<?php echo $row['id'] ?>" class="text-white">
+                            <div class="card"
+                                style="background-image: url('admin/<?php echo $row['music_thumbnail'] ?>');background-size: cover;background-repeat: no-repeat;background-position: center center; width:80%;">
+                                <div class="card-details ">
+                                    <p class="text-title text-white text-capitalize"><?php echo $row['music_title'] ?></p>
+                                    <p class="text-white text-capitalize" style="font-weight: bolder;">Album Name
+                                        <?php echo $row['album_name'] ?>
+                                    </p>
+                                </div>
+                                <button class="card-button">Play Now</button>
                             </div>
-                            <button class="card-button"><a href="playmusic.php?id=<?php echo $row['id'] ?>"
-                                    class="text-white">More info</a></button>
-                        </div>
+                        </a>
                     </div>
                     <?php
                 }

@@ -63,75 +63,20 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                <div class="banner_taital">Enjoy <br><?php echo $Carouselrow['video_title'] ?> With <br>
                   <?php echo $Carouselrow['artist_name'] ?></div>
                <p class="banner_text"><?php echo $Carouselrow['video_description'] ?> </p>
-               <div class="see_bt"><a href="#" class="carouselbtn" style="background-color: #138808 ;" * />See More</a>
+               <div class="see_bt"><a href="#" class="carouselbtn" style="background-color: #138808 ;">See More</a>
                </div>
             </div>
             <div class="col-md-6">
                <div class="play_icon"><a href="admin/<?php $Carouselrow['video_loc'] ?>"><img
                         src="images/play-icon.png"></a></div>
             </div>
-         </div>
+         </div>F
       </div>
    </div>
    <!-- banner section end -->
-   <!-- arrival section start -->
-   <div class="arrival_section layout_padding">
-      <div class="container">
-         <div class="row">
-            <div class="col-sm-6 col-lg-4">
-               <div class="image_1">
-                  <h2 class="jesusroch_text">J E S U S R O C H</h2>
-                  <p class="movie_text">Hollywood Movie</p>
-               </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-               <div class="image_2">
-                  <h2 class="jesusroch_text">J E S U S R O C H</h2>
-                  <p class="movie_text">Hollywood Movie</p>
-               </div>
-            </div>
-            <div class="col-sm-8 col-lg-4">
-               <h1 class="arrival_text">A r r i v a l</h1>
-               <div class="movie_main">
-                  <div class="mins_text_1">150 mins</div>
-                  <div class="mins_text">Actions Movie</div>
-                  <div class="mins_text"><img src="images/icon-1.png"><span class="icon_1">Watchlist</span></div>
-               </div>
-               <p class="long_text">It is a long established fact that a reader will be distracted by the readable
-                  content of a page when looking at its layout. The point of using Lorem</p>
-               <div class="rating_main">
-                  <div class="row">
-                     <div class="col-sm-6 col-lg-6">
-                        <div class="icon_2"><img src="images/icon-2.png"><span class="padding_10">4.6 Revieweed</span>
-                        </div>
-                     </div>
-                     <div class="col-sm-6 col-lg-6">
-                        <div class="icon_2"><img src="images/icon-2.png"><span class="padding_10">Your Rateing</span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="paly_bt"><a href="#">Play Now</a></div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- arrival section end -->
    <!-- movies section start -->
    <div class="movies_section layout_padding" style="background-color: black;">
       <div class="container">
-         <div class="movies_menu">
-            <ul>
-               <li class="active"><a href="#">Overview</a></li>
-               <li><a href="tv.html">TV</a></li>
-               <li><a href="movies.html">Movies</a></li>
-               <li><a href="#">Show</a></li>
-               <li><a href="celebs.html">Celeb</a></li>
-               <li><a href="#">Sports</a></li>
-               <li><a href="#">News</a></li>
-               <li><a href="#">Cartoon</a></li>
-            </ul>
-         </div>
          <div class="movies_section_2 layout_padding">
             <h2 class="letest_text">Latest Music<span class="badge rounded-pill  mx-2 text-bg-primary"
                   style="background-color:#138808 ;color:white;border-radius: 40%;">New</span>
@@ -152,7 +97,9 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                               <img src="admin/<?php echo $musicrow['music_thumbnail'] ?>" class="image img-fluid"
                                  style="width:100%">
                               <div class="middle">
-                                 <div class="playnow_bt"><a href="" style="cursor: pointer;">Play Now</a></div>
+                                 <div class="playnow_bt" style="background-color: green;"><a
+                                       href="playmusic.php?id=<?php echo $musicrow['id'] ?>"
+                                       style="cursor: pointer;color: white;">Play Now</a></div>
                               </div>
                            </div>
                            <h1 class="code_text"><?php echo $musicrow['music_title'] ?></h1>
@@ -219,7 +166,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
             </div>
          </div>
 
-         <div class="seebt_1"><a href="#">See More</a></div>
+         <div class="seebt_1"><a href="#" style="background-color: green;color:white">See More</a></div>
       </div>
    </div>
    <!-- movies section end -->
