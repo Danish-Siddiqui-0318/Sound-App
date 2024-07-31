@@ -33,49 +33,34 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/card.css">
-
+    <link rel="stylesheet" href="playmusic.css">
 </head>
 
-<body style="background-color: black;">
-
-
+<body>
 
     <!-- Navbar HERE-->
     <?php require_once ('components/navbar.php') ?>
     <!-- Navbar HERE-->
-    <div class="container-fluid my-4">
-        <div class="row">
-            <?php require_once ('admin/db.php');
-            $query = "SELECT music.*,artist.artist_name, artist.artist_image, album.album_name, album.album_photo, album.releaseyear,musicgenre.music_genre_name FROM music INNER JOIN artist ON music.music_artist= artist.artist_id INNER JOIN album ON music.music_album = album.id INNER JOIN musicgenre ON music.music_genre = musicgenre.id";
-            $result = mysqli_query($connection, $query);
-            if ($result->num_rows > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                    <div class="col-md-4 my-5">
-                        <div class="card"
-                            style="background-image: url('admin/<?php echo $row['music_thumbnail'] ?>');background-size: cover;background-repeat: no-repeat;background-position: center center; width:80%;">
-                            <div class="card-details ">
-                                <p class="text-title text-white text-capitalize"><?php echo $row['music_title'] ?></p>
-                                <p class="text-white text-capitalize" style="font-weight: bolder;">Album Name
-                                    <?php echo $row['album_name'] ?>
-                                </p>
-                            </div>
-                            <button class="card-button"><a href="playmusic.php?id=<?php echo $row['id'] ?>"
-                                    class="text-white">More info</a></button>
-                        </div>
-                    </div>
-                    <?php
-                }
-            }
-            ?>
-        </div>
-    </div>
+    <?php
+
+    require_once ('admin/db.php');
+    $id = $_GET['id'];
+    $query = "SELECT music.*,artist.artist_name, artist.artist_image, album.album_name, album.album_photo, album.releaseyear,musicgenre.music_genre_name FROM music INNER JOIN artist ON music.music_artist= artist.artist_id INNER JOIN album ON music.music_album = album.id INNER JOIN musicgenre ON music.music_genre = musicgenre.id WHERE music.`id`=" . $id;
+    $result = mysqli_query($connection, $query);
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+    }
+    ?>
+    <img src="admin/<?php echo $row['music_thumbnail'] ?>" class="img-fluid">
+    <audio src="admin/<?php echo $row['music_loc'] ?>" controls>
+    </audio>
 
 
     <!-- footer  section start -->
     <?php require_once ('components/footer.php') ?>
     <!-- footer  section end -->
-    <script src="js/jquery.min.js"></script>
+    <script src=" js/jquery.min.js">
+    </script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.0.0.min.js"></script>
@@ -91,6 +76,7 @@
             uiLibrary: 'bootstrap4'
         });
     </script>
+    <script src="playmusic.js"></script>
 </body>
 
 </html>
