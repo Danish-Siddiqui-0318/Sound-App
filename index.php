@@ -67,7 +67,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                </div>
             </div>
             <div class="col-md-6">
-               <div class="play_icon"><a href="admin/<?php $Carouselrow['video_loc'] ?>"><img
+               <div class="play_icon"><a href="playvideo.php?id=<?php echo $Carouselrow['id'] ?>"><img
                         src="images/play-icon.png"></a></div>
             </div>
          </div>
@@ -81,7 +81,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
             <h2 class="letest_text">Latest Music<span class="badge rounded-pill  mx-2 text-bg-primary"
                   style="background-color:#138808 ;color:white;border-radius: 40%;">New</span>
             </h2>
-            <div class="seemore_bt"><a href="#">See More</a></div>
+            <div class="seemore_bt"><a href="music.php">See More</a></div>
             <div class="movies_main">
                <div class="iamge_movies_main">
                   <?php
@@ -105,15 +105,6 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                            <h1 class="code_text"><?php echo $musicrow['music_title'] ?></h1>
                            <p class="there_text">Artist Name : <?php echo $musicrow['artist_name'] ?> </p>
                            <p class="there_text">Music Genre : <?php echo $musicrow['music_genre_name'] ?> </p>
-                           <div class="star_icon">
-                              <ul>
-                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
-                              </ul>
-                           </div>
                         </div>
                         <?php
                      }
@@ -125,7 +116,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
          <div class="movies_section_2 layout_padding">
             <h2 class="letest_text">Latest Video<span class="badge rounded-pill  mx-2 text-bg-primary"
                   style="background-color:#138808 ;color:white;border-radius: 40%;">New</span></h2>
-            <div class="seemore_bt"><a href="#">See More</a></div>
+            <div class="seemore_bt"><a href="video.php">See More</a></div>
             <div class="movies_main">
                <div class="iamge_movies_main">
                   <?php
@@ -143,20 +134,14 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                               <img src="admin/<?php echo $videorow['video_thumbnail'] ?>" class="image"
                                  style="width:100%;aspect-ratio: 1/1;">
                               <div class="middle">
-                                 <div class="playnow_bt">Play Now</div>
+                                 <div class="playnow_bt" style="background-color: green;"><a
+                                       href="playvideo.php?id=<?php echo $videorow['id'] ?>"
+                                       style="cursor: pointer;color: white;">Play Now</a></div>
                               </div>
                            </div>
-                           <h1 class="code_text">CADE Prlor</h1>
-                           <p class="there_text">There are many variations </p>
-                           <div class="star_icon">
-                              <ul>
-                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
-                                 <li><a href="#"><img src="images/star-icon.png"></a></li>
-                              </ul>
-                           </div>
+                           <h1 class="code_text"><?php echo $videorow['video_title'] ?></h1>
+                           <p class="there_text">Artist Name : <?php echo $videorow['artist_name'] ?> </p>
+                           <p class="there_text">Video Genre : <?php echo $videorow['video_genre_name'] ?> </p>
                         </div>
                         <?php
                      }
