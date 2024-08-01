@@ -50,7 +50,7 @@
    $Carouselrow = mysqli_fetch_assoc($result);
    ?>
    <div class="banner_section layout_padding"
-      style="background-image: url(admin/<?php echo $Carouselrow['video_thumbnail'] ?>);background-repeat: no-repeat;background-size: cover;"
+      style="background-image: url(admin/<?php echo $Carouselrow['video_thumbnail'] ?>);background-repeat: no-repeat;background-size:100vw 100vh;"
       class="img-fluid">
       <div class="container">
          <div class="row">
@@ -60,7 +60,7 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(1.6px);
 -webkit-backdrop-filter: blur(1.6px);
 border: 1px solid rgba(255, 255, 255, 0.49);">
-               <div class="banner_taital " style="texts">Enjoy <br><?php echo $Carouselrow['video_title'] ?> With <br>
+               <div class="banner_taital " style="texts">Enjoy: <br><?php echo $Carouselrow['video_title'] ?> With <br>
                   <?php echo $Carouselrow['artist_name'] ?></div>
                <p class="banner_text"><?php echo $Carouselrow['video_description'] ?> </p>
                <div class="see_bt"><a href="#" class="carouselbtn" style="background-color: #138808 ;">See More</a>
@@ -70,7 +70,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                <div class="play_icon"><a href="admin/<?php $Carouselrow['video_loc'] ?>"><img
                         src="images/play-icon.png"></a></div>
             </div>
-         </div>F
+         </div>
       </div>
    </div>
    <!-- banner section end -->
