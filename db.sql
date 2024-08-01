@@ -1,5 +1,5 @@
 /*
-SQLyog Ultimate v13.1.1 (64 bit)
+SQLyog Professional v13.1.1 (64 bit)
 MySQL - 10.4.32-MariaDB : Database - sound-app
 *********************************************************************
 */
@@ -61,7 +61,7 @@ CREATE TABLE `artist` (
 /*Data for the table `artist` */
 
 insert  into `artist`(`artist_id`,`artist_name`,`artist_image`) values 
-(8,'Dua Lipa','artist_image/dua-lipa.jpg'),
+(8,'Dua Lipa','artist_image/time().dualipa.jpg'),
 (9,'Yashal Shahid','artist_image/yashal shahid.jpg'),
 (10,'Kaifi Khalil','artist_image/kaifi khalil.jpeg'),
 (11,'Azan Sami Khan','artist_image/azan sami.jpg'),
@@ -90,12 +90,12 @@ CREATE TABLE `music` (
   `music_album` varchar(255) DEFAULT NULL,
   `music_genre` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `music` */
 
 insert  into `music`(`id`,`music_loc`,`music_title`,`music_thumbnail`,`music_year`,`music_artist`,`music_album`,`music_genre`) values 
-(11,'music/Levitating.mp3','levitating (Dua lipa)','music_thumbnail/levetating.jpg','2020','8','7','3'),
+(10,'music/One Kiss (with Dua Lipa).mp3','one kiss','music_thumbnail/One-Kiss.jpg','2018','8','7','3'),
 (12,'music/Mere Humsafar (Original Score) [Female Version].mp3','Mara Humsafar','music_thumbnail/Mere-Humsafar.jpg','2022','9','8','5'),
 (13,'music/Kahani Suno 2.0.mp3','Kahani Suno','music_thumbnail/kahani suno.jpeg','2022','10','7','4'),
 (14,'music/Ik Lamha.mp3','Ik Lamha','music_thumbnail/ik lamha.jpg','2021','11','10','5'),
@@ -107,8 +107,7 @@ insert  into `music`(`id`,`music_loc`,`music_title`,`music_thumbnail`,`music_yea
 (20,'music/Shikayat.mp3','Shekayat','music_thumbnail/shekayat song.jpg','2023','17','16','4'),
 (21,'music/Dandelions.mp3','Dandelions','music_thumbnail/dandlions.jpg','2017','18','17','5'),
 (22,'music/O Maahi.mp3','O Maahi','music_thumbnail/o mahee.jpg','2023','19','18','5'),
-(23,'music/[SPOTIFY-DOWNLOADER.COM] Samjho Na.mp3','Samjho Na','music_thumbnail/samjho na.jpg','2022','20','19','5'),
-(24,'music/One Kiss (with Dua Lipa).mp3','one kiss','music_thumbnail/One-Kiss.jpg','2018','8','7','3');
+(23,'music/[SPOTIFY-DOWNLOADER.COM] Samjho Na.mp3','Samjho Na','music_thumbnail/samjho na.jpg','2022','20','19','5');
 
 /*Table structure for table `musicgenre` */
 
@@ -139,14 +138,13 @@ CREATE TABLE `users` (
   `password` varchar(255) DEFAULT NULL,
   `role` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`username`,`email`,`password`,`role`) values 
 (3,'Danish Siddiqui','danish@gmail.com','danish','Admin'),
-(4,'waqar Hussain','waqar@gmail.com','Waqar','User'),
-(12,'uzair','uzair@gmail.com','uzair','User');
+(4,'waqar Hussain','waqar@gmail.com','Waqar','User');
 
 /*Table structure for table `video` */
 
@@ -167,8 +165,8 @@ CREATE TABLE `video` (
 /*Data for the table `video` */
 
 insert  into `video`(`id`,`video_loc`,`video_artist`,`video_thumbnail`,`video_title`,`release_date`,`video_genre`,`video_description`) values 
-(2,'video/The Bhopal Gas Leak _ Who were Railway Men_ _ Dhruv Rathee.mp4','7','thumbnail/druv2.jpg','The Bhopal  gas leak who were Railway men','November  26 2023','3','Unveil the chilling account of the Bhopal gas tragedy that shook the world on December 3 1984 This eye opening video exposes the horrifying aftermath of the poisonous gas leak from the Union Carbide plant'),
-(5,'video/Create Undetectable AI Content Online with this tool ?_2.mp4','9','thumbnail/harry9.jpg','Create Undetectable AI Content Online with this tool','jun 21 2024','5','In this exciting video, we delve into the world of content creation with artifcial intelligence Join us as we explore the powerful tool known as BypassGPT designed to create undetectable AI generated content online. With BypassGPT you can bypass all AI detectors and achieve a 100 percent human score making your AI generated content indistinguishable from human written content'),
+(2,'video/The Bhopal Gas Leak _ Who were Railway Men_ _ Dhruv Rathee.mp4','8','thumbnail/druv2.jpg','The Bhopal  gas leak who were Railway men','November  26 2023','3','Unveil the chilling account of the Bhopal gas tragedy that shook the world on December 3 1984 This eye opening video exposes the horrifying aftermath of the poisonous gas leak from the Union Carbide plant'),
+(5,'video/Create Undetectable AI Content Online with this tool_2.mp4','9','thumbnail/harry9.jpg','Create Undetectable AI Content Online with this tool','jun 21 2024','5','In this exciting video, we delve into the world of content creation with artifcial intelligence Join us as we explore the powerful tool known as BypassGPT designed to create undetectable AI generated content online. With BypassGPT you can bypass all AI detectors and achieve a 100 percent human score making your AI generated content indistinguishable from human written content'),
 (6,'video/This is why you are not confident in logic building.mp4','10','thumbnail/chai3.jpg','This is why you are not confdent in logic building','Jun 14 2024','5','How to build logic is the most asked question in programming world There are many factors that contribute in logic building but we will discuss one such topic in this video'),
 (9,'video/I Built 100 Houses And Gave Them Away!.mp4','7','thumbnail/beast.jpg','I Built 100 Houses And Gave Them Away!','jun 29 2024','3','we building and giving 100 house to families in need improving their quality life');
 
@@ -181,7 +179,7 @@ CREATE TABLE `video_artist` (
   `artist_name` varchar(255) DEFAULT NULL,
   `artist_img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `video_artist` */
 
