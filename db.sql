@@ -90,12 +90,11 @@ CREATE TABLE `music` (
   `music_album` varchar(255) DEFAULT NULL,
   `music_genre` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `music` */
 
 insert  into `music`(`id`,`music_loc`,`music_title`,`music_thumbnail`,`music_year`,`music_artist`,`music_album`,`music_genre`) values 
-(10,'music/One Kiss (with Dua Lipa).mp3','one kiss','music_thumbnail/One-Kiss.jpg','2018','8','7','3'),
 (11,'music/Levitating.mp3','levitating (Dua lipa)','music_thumbnail/levetating.jpg','2020','8','7','3'),
 (12,'music/Mere Humsafar (Original Score) [Female Version].mp3','Mara Humsafar','music_thumbnail/Mere-Humsafar.jpg','2022','9','8','5'),
 (13,'music/Kahani Suno 2.0.mp3','Kahani Suno','music_thumbnail/kahani suno.jpeg','2022','10','7','4'),
@@ -108,7 +107,8 @@ insert  into `music`(`id`,`music_loc`,`music_title`,`music_thumbnail`,`music_yea
 (20,'music/Shikayat.mp3','Shekayat','music_thumbnail/shekayat song.jpg','2023','17','16','4'),
 (21,'music/Dandelions.mp3','Dandelions','music_thumbnail/dandlions.jpg','2017','18','17','5'),
 (22,'music/O Maahi.mp3','O Maahi','music_thumbnail/o mahee.jpg','2023','19','18','5'),
-(23,'music/[SPOTIFY-DOWNLOADER.COM] Samjho Na.mp3','Samjho Na','music_thumbnail/samjho na.jpg','2022','20','19','5');
+(23,'music/[SPOTIFY-DOWNLOADER.COM] Samjho Na.mp3','Samjho Na','music_thumbnail/samjho na.jpg','2022','20','19','5'),
+(24,'music/One Kiss (with Dua Lipa).mp3','one kiss','music_thumbnail/One-Kiss.jpg','2018','8','7','3');
 
 /*Table structure for table `musicgenre` */
 
