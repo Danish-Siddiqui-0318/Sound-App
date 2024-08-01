@@ -90,12 +90,11 @@ CREATE TABLE `music` (
   `music_album` varchar(255) DEFAULT NULL,
   `music_genre` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `music` */
 
 insert  into `music`(`id`,`music_loc`,`music_title`,`music_thumbnail`,`music_year`,`music_artist`,`music_album`,`music_genre`) values 
-(10,'music/One Kiss (with Dua Lipa).mp3','one kiss','music_thumbnail/One-Kiss.jpg','2018','8','7','3'),
 (11,'music/Levitating.mp3','levitating (Dua lipa)','music_thumbnail/levetating.jpg','2020','8','7','3'),
 (12,'music/Mere Humsafar (Original Score) [Female Version].mp3','Mara Humsafar','music_thumbnail/Mere-Humsafar.jpg','2022','9','8','5'),
 (13,'music/Kahani Suno 2.0.mp3','Kahani Suno','music_thumbnail/kahani suno.jpeg','2022','10','7','4'),
@@ -108,7 +107,8 @@ insert  into `music`(`id`,`music_loc`,`music_title`,`music_thumbnail`,`music_yea
 (20,'music/Shikayat.mp3','Shekayat','music_thumbnail/shekayat song.jpg','2023','17','16','4'),
 (21,'music/Dandelions.mp3','Dandelions','music_thumbnail/dandlions.jpg','2017','18','17','5'),
 (22,'music/O Maahi.mp3','O Maahi','music_thumbnail/o mahee.jpg','2023','19','18','5'),
-(23,'music/[SPOTIFY-DOWNLOADER.COM] Samjho Na.mp3','Samjho Na','music_thumbnail/samjho na.jpg','2022','20','19','5');
+(23,'music/[SPOTIFY-DOWNLOADER.COM] Samjho Na.mp3','Samjho Na','music_thumbnail/samjho na.jpg','2022','20','19','5'),
+(24,'music/One Kiss (with Dua Lipa).mp3','one kiss','music_thumbnail/One-Kiss.jpg','2018','8','7','3');
 
 /*Table structure for table `musicgenre` */
 
@@ -162,12 +162,15 @@ CREATE TABLE `video` (
   `video_genre` varchar(255) DEFAULT NULL,
   `video_description` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `video` */
 
 insert  into `video`(`id`,`video_loc`,`video_artist`,`video_thumbnail`,`video_title`,`release_date`,`video_genre`,`video_description`) values 
-(1,'video/videoplayback.mp4','5','thumbnail/brb.jpg','$1 Job vs$1000000 JOB','2023','2',' In this MrBeast video, participants experience the stark contrast between a job that pays $1 and one that pays $10,000,000, highlighting the differences in tasks, responsibilities, and lifestyles associated with each role.');
+(2,'video/The Bhopal Gas Leak _ Who were Railway Men_ _ Dhruv Rathee.mp4','8','thumbnail/druv2.jpg','The Bhopal  gas leak who were Railway men','November  26 2023','3','Unveil the chilling account of the Bhopal gas tragedy that shook the world on December 3 1984 This eye opening video exposes the horrifying aftermath of the poisonous gas leak from the Union Carbide plant'),
+(5,'video/Create Undetectable AI Content Online with this tool ?_2.mp4','9','thumbnail/harry9.jpg','Create Undetectable AI Content Online with this tool','jun 21 2024','5','In this exciting video, we delve into the world of content creation with artifcial intelligence Join us as we explore the powerful tool known as BypassGPT designed to create undetectable AI generated content online. With BypassGPT you can bypass all AI detectors and achieve a 100 percent human score making your AI generated content indistinguishable from human written content'),
+(6,'video/This is why you are not confident in logic building.mp4','10','thumbnail/chai3.jpg','This is why you are not confdent in logic building','Jun 14 2024','5','How to build logic is the most asked question in programming world There are many factors that contribute in logic building but we will discuss one such topic in this video'),
+(9,'video/I Built 100 Houses And Gave Them Away!.mp4','7','thumbnail/beast 1.jpg','I Built 100 Houses And Gave Them Away!','jun 29 2024','4','we building and giving 100 house to families in need improving their quality life');
 
 /*Table structure for table `video_artist` */
 
@@ -178,9 +181,15 @@ CREATE TABLE `video_artist` (
   `artist_name` varchar(255) DEFAULT NULL,
   `artist_img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `video_artist` */
+
+insert  into `video_artist`(`id`,`artist_name`,`artist_img`) values 
+(7,'Mr Beast','video_artist_image/MrBeast.jpg'),
+(8,'Druv Rathee','video_artist_image/druv rathee.jpg'),
+(9,'Harry','video_artist_image/harry pic.jpg'),
+(10,'Chai or code','video_artist_image/chai or code.jpg');
 
 /*Table structure for table `videogenre` */
 
@@ -190,9 +199,14 @@ CREATE TABLE `videogenre` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `video_genre_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `videogenre` */
+
+insert  into `videogenre`(`id`,`video_genre_name`) values 
+(3,'Infotainment '),
+(4,'Entertainment '),
+(5,'Education ');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

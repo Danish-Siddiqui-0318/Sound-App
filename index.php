@@ -45,7 +45,7 @@
    $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
    FROM video
    INNER JOIN video_artist ON video.video_artist = video_artist.id
-   INNER JOIN videogenre ON videogenre.id = video.video_genre  WHERE video.`id`=3";
+   INNER JOIN videogenre ON videogenre.id = video.video_genre  ORDER BY video.`id`  LIMIT 1";
    $result = mysqli_query($connection, $query);
    $Carouselrow = mysqli_fetch_assoc($result);
    ?>
@@ -60,7 +60,7 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(1.6px);
 -webkit-backdrop-filter: blur(1.6px);
 border: 1px solid rgba(255, 255, 255, 0.49);">
-               <div class="banner_taital">Enjoy <br><?php echo $Carouselrow['video_title'] ?> With <br>
+               <div class="banner_taital " style="texts">Enjoy <br><?php echo $Carouselrow['video_title'] ?> With <br>
                   <?php echo $Carouselrow['artist_name'] ?></div>
                <p class="banner_text"><?php echo $Carouselrow['video_description'] ?> </p>
                <div class="see_bt"><a href="#" class="carouselbtn" style="background-color: #138808 ;">See More</a>
@@ -133,7 +133,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                   $videoQuerry = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
                   FROM video
                   INNER JOIN video_artist ON video.video_artist = video_artist.id
-                  INNER JOIN videogenre ON videogenre.id = video.video_genre  ORDER BY video.`id`DESC LIMIT 4";
+                  INNER JOIN videogenre ON videogenre.id = video.video_genre  ORDER BY video.`id` LIMIT 4";
                   $videoResult = mysqli_query($connection, $videoQuerry);
                   if ($videoResult->num_rows > 0) {
                      while ($videorow = mysqli_fetch_assoc($videoResult)) {

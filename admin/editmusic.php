@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aptech Ecommerce | Products</title>
+    <title>Sound - The Music And Video App</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -33,7 +33,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Edit Genre</h1>
+                            <h1>Edit Music</h1>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -45,11 +45,11 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Edit Genre</h3>
+                        <h3 class="card-title">Edit Music</h3>
 
                         <div class="card-tools">
                             <a href="music.php" class="btn btn btn-sm btn-primary">
-                                <i class="fas fa-plus"></i> View Music Genre
+                                <i class="fas fa-plus"></i> View Music 
                             </a>
                         </div>
                     </div>
@@ -70,6 +70,26 @@
                                         value="<?php echo $row['music_title'] ?>">
                                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
                                 </div>
+
+
+                                <div class="card-body">
+                                <div class="form-group">
+                                    <label for="album_name">Thumbnail</label>
+                                    <br>
+                                    <input type="hidden" value="<?php echo $row['music_thumbnail'] ?>" name="music_thumbnail">
+                                    <img src="<?php echo $row['music_thumbnail'] ?>" alt="" class="img-fluid" width="200" height="200">
+                                </div>
+                            </div>
+
+
+                            <label for="exampleInputFile">File input</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="music_thumbnail_new" accept="image/*">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                            </div>
+
                                 <div class="form-group">
                                     <label for="music_year">Enter Music Release Year</label>
                                     <input required type="text" class="form-control" id="music_year" name="music_year"
