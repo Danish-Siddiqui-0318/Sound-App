@@ -70,6 +70,25 @@
                                         value="<?php echo $row1['video_title'] ?>">
                                     <input type="hidden" name="id" value="<?php echo $row1['id'] ?>">
                                 </div>
+
+                                <div class="card-body">
+                                <div class="form-group">
+                                    <label for="video_name">Thumbnail</label>
+                                    <br>
+                                    <input type="hidden" value="<?php echo $row1['video_thumbnail'] ?>" name="video_thumbnail">
+                                    <img src="<?php echo $row1['video_thumbnail'] ?>" alt="" class="img-fluid" width="200" height="200">
+                                </div>
+                                </div>
+                                
+
+                                <label for="exampleInputFile">File input</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="video_thumbnail_new" accept="image/*">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                            </div>
+
                                 <!-- <div class="form-group">
                                     <label for="exampleInputFile">Enter Video Thumbnail</label>
                                     <div class="input-group">
