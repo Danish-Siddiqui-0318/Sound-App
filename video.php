@@ -44,17 +44,32 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <div class="search">
-                    <input placeholder="Search..." type="text">
+                    <form action="">
+                    <input placeholder="Search..." type="text" name="query" value="<?php  if($_GET['query']!=''){ echo $_GET['query']; } ?>">
                     <button type="submit">Go</button>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="row">
             <?php require_once('admin/db.php');
-            $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
-            FROM video
-            INNER JOIN video_artist ON video.video_artist = video_artist.id
-            INNER JOIN videogenre ON videogenre.id = video.video_genre";
+            
+
+            if($_GET['query']!=''){
+                $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
+                FROM video
+                INNER JOIN video_artist ON video.video_artist = video_artist.id
+                INNER JOIN videogenre ON videogenre.id = video.video_genre 
+                WHERE video.`video_artist` IN (SELECT id FROM video_artist
+                WHERE video_artist.`artist_name` LIKE '%".$_GET['query']."%') OR video.`video_title` LIKE '%".$_GET['query']."%'";
+            }else{
+                $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
+                FROM video
+                INNER JOIN video_artist ON video.video_artist = video_artist.id
+                INNER JOIN videogenre ON videogenre.id = video.video_genre";
+            }
+
+
             $result = mysqli_query($connection, $query);
             if ($result->num_rows > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
