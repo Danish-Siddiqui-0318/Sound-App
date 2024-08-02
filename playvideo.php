@@ -27,8 +27,7 @@
     <!-- owl stylesheets -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
-        media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -40,11 +39,11 @@
 <body style="background-color: black;color: white;">
 
     <!-- Navbar HERE-->
-    <?php require_once ('components/navbar.php') ?>
+    <?php require_once('components/navbar.php') ?>
     <!-- Navbar HERE-->
     <?php
 
-    require_once ('admin/db.php');
+    require_once('admin/db.php');
     $id = $_GET['id'];
     $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
     FROM video
@@ -55,11 +54,11 @@
         $row = mysqli_fetch_assoc($result);
     }
     ?>
-
+    
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 my-4" style="background-color: black;color: green;">
-                <video id="player" playsinline controls data-poster="admin/<?php echo $row['video_thumbnail'] ?>">
+            <div class="col-md-12 my-4 rounded-lg" style="background-color: black;color: green;">
+                <video class="--plyr-badge-border-radius" id="player" playsinline controls data-poster="admin/<?php echo $row['video_thumbnail'] ?>" >
                     <source src="admin/<?php echo $row['video_loc'] ?>" type="video/mp4" />
                 </video>
             </div>
@@ -87,7 +86,7 @@
 
 
     <!-- footer  section start -->
-    <?php require_once ('components/footer.php') ?>
+    <?php require_once('components/footer.php') ?>
     <!-- footer  section end -->
     <script src=" js/jquery.min.js">
     </script>

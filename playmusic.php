@@ -27,8 +27,7 @@
     <!-- owl stylesheets -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
-        media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -40,11 +39,11 @@
 <body style="background-color: black;color: white;">
 
     <!-- Navbar HERE-->
-    <?php require_once ('components/navbar.php') ?>
+    <?php require_once('components/navbar.php') ?>
     <!-- Navbar HERE-->
     <?php
 
-    require_once ('admin/db.php');
+    require_once('admin/db.php');
     $id = $_GET['id'];
     $query = "SELECT music.*,artist.artist_name, artist.artist_image, album.album_name, album.album_photo, album.releaseyear,musicgenre.music_genre_name FROM music INNER JOIN artist ON music.music_artist= artist.artist_id INNER JOIN album ON music.music_album = album.id INNER JOIN musicgenre ON music.music_genre = musicgenre.id WHERE music.`id`=" . $id;
     $result = mysqli_query($connection, $query);
@@ -72,8 +71,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 my-4" style="background-color: black;color: green;">
-                <audio id="player" controls>
+            <style>
+                .plyr--audio .plyr__controls {
+                    background: black;
+                }
+
+                .plyr__controls .plyr__controls__item {
+                    color: white;
+                }
+            </style>
+            <div class="col-md-12 my-4">
+                <audio id="player" controls style="--plyr-color-main: #1ac266; ">
                     <source src="admin/<?php echo $row['music_loc'] ?>" type="audio/mp3" />
                 </audio>
             </div>
@@ -83,7 +91,7 @@
 
 
     <!-- footer  section start -->
-    <?php require_once ('components/footer.php') ?>
+    <?php require_once('components/footer.php') ?>
     <!-- footer  section end -->
     <script src=" js/jquery.min.js">
     </script>
