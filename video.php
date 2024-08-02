@@ -36,9 +36,6 @@
 </head>
 
 <body style="background-color: black;">
-
-
-
     <!-- Navbar HERE-->
     <?php require_once('components/navbar.php') ?>
     <!-- Navbar HERE-->
@@ -62,7 +59,6 @@
             if ($result->num_rows > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
             ?>
-
                     <div class="col-md-4 my-5">
                         <a href="playvideo.php?id=<?php echo $row['id'] ?>" class="text-white">
                             <div class="card" style="background-image: url('admin/<?php echo $row['video_thumbnail'] ?>');background-size: cover;background-repeat: no-repeat;background-position: center center; width:80%;">
