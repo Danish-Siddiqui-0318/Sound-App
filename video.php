@@ -33,7 +33,6 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/searchbar.css">
-
 </head>
 
 <body style="background-color: black;">
