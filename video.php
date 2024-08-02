@@ -27,7 +27,8 @@
     <!-- owl stylesheets -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+        media="screen">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -37,7 +38,7 @@
 
 <body style="background-color: black;">
     <!-- Navbar HERE-->
-    <?php require_once('components/navbar.php') ?>
+    <?php require_once ('components/navbar.php') ?>
     <!-- Navbar HERE-->
     <div class="container-fluid my-4">
         <div class="row">
@@ -45,38 +46,40 @@
             <div class="col-md-4">
                 <div class="search">
                     <form action="">
-                    <input placeholder="Search..." type="text" name="query" value="<?php  if($_GET['query']!=''){ echo $_GET['query']; } ?>">
-                    <button type="submit">Go</button>
+                        <input placeholder="Search..." type="text" name="query"
+                            value="<?php if ($_GET['query'] != '') {
+                                echo $_GET['query'];
+                            } ?>">
+                        <button type="submit">Go</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="row">
-            <?php require_once('admin/db.php');
-            
+            <?php require_once ('admin/db.php');
 
-            if($_GET['query']!=''){
+
+            if ($_GET['query'] != '') {
                 $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
                 FROM video
                 INNER JOIN video_artist ON video.video_artist = video_artist.id
                 INNER JOIN videogenre ON videogenre.id = video.video_genre 
                 WHERE video.`video_artist` IN (SELECT id FROM video_artist
-                WHERE video_artist.`artist_name` LIKE '%".$_GET['query']."%') OR video.`video_title` LIKE '%".$_GET['query']."%'";
-            }else{
+                WHERE video_artist.`artist_name` LIKE '%" . $_GET['query'] . "%') OR video.`video_title` LIKE '%" . $_GET['query'] . "%'";
+            } else {
                 $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
                 FROM video
                 INNER JOIN video_artist ON video.video_artist = video_artist.id
                 INNER JOIN videogenre ON videogenre.id = video.video_genre";
             }
-
-
             $result = mysqli_query($connection, $query);
             if ($result->num_rows > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-            ?>
+                    ?>
                     <div class="col-md-4 my-5">
                         <a href="playvideo.php?id=<?php echo $row['id'] ?>" class="text-white">
-                            <div class="card" style="background-image: url('admin/<?php echo $row['video_thumbnail'] ?>');background-size: cover;background-repeat: no-repeat;background-position: center center; width:80%;">
+                            <div class="card"
+                                style="background-image: url('admin/<?php echo $row['video_thumbnail'] ?>');background-size: cover;background-repeat: no-repeat;background-position: center center; width:80%;">
                                 <div class="card-details ">
                                     <p class="text-title text-white text-capitalize"><?php echo $row['video_title'] ?></p>
                                     <p class="text-white text-capitalize" style="font-weight: bolder;">Release Date :
@@ -90,7 +93,7 @@
                             </div>
                         </a>
                     </div>
-            <?php
+                    <?php
                 }
             }
             ?>
@@ -99,7 +102,7 @@
 
 
     <!-- footer  section start -->
-    <?php require_once('components/footer.php') ?>
+    <?php require_once ('components/footer.php') ?>
     <!-- footer  section end -->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
