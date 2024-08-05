@@ -78,6 +78,9 @@
                                     <p class="text-white text-capitalize" style="font-weight: bolder;">Album Name
                                         <?php echo $row['album_name'] ?>
                                     </p>
+                                    <p class="text-white text-capitalize" style="font-weight: bolder;">Artist:  
+                                        <?php echo $row['artist_name'] ?>
+                                    </p>
                                 </div>
                                 <button class="card-button">Play Now</button>
                             </div>
