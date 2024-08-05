@@ -46,10 +46,9 @@
             <div class="col-md-4">
                 <div class="search">
                     <form action="">
-                        <input placeholder="Search..." type="text" name="query"
-                            value="<?php if (isset($_GET['query'])) {
-                                echo $_GET['query'];
-                            } ?>">
+                        <input placeholder="Search..." type="text" name="query" value="<?php if (isset($_GET['query'])) {
+                            echo $_GET['query'];
+                        } ?>">
                         <button type="submit">Go</button>
                     </form>
                 </div>
@@ -87,6 +86,9 @@
                                     </p>
                                     <p class="text-white text-capitalize" style="font-weight: bolder;">Genre :
                                         <?php echo $row['video_genre_name'] ?>
+                                    </p>
+                                    <p class="text-white text-capitalize" style="font-weight: bolder;">Artist :
+                                        <?php echo $row['artist_name'] ?>
                                     </p>
                                 </div>
                                 <button class="card-button">Play Now</button>
