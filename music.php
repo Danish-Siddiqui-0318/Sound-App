@@ -49,7 +49,7 @@
             <div class="col-md-4">
                 <form action="">
                     <div class="search">
-                        <input placeholder="Search..." type="text" name="query" value="<?php if ($_GET['query'] != '') {
+                        <input placeholder="Search..." type="text" name="query" value="<?php if (isset($_GET['query'])) {
                             echo $_GET['query'];
                         } ?>">
                         <button type="submit">Go</button>
@@ -59,7 +59,7 @@
         </div>
         <div class="row">
             <?php require_once ('admin/db.php');
-            if ($_GET['query'] != '') {
+            if (isset($_GET['query'])) {
                 $query = "SELECT music.*,artist.artist_name, artist.artist_image, album.album_name, album.album_photo, album.releaseyear,musicgenre.music_genre_name FROM music INNER JOIN artist ON music.music_artist= artist.artist_id INNER JOIN album ON music.music_album = album.id INNER JOIN musicgenre ON music.music_genre = musicgenre.id WHERE music.`music_artist` IN (SELECT artist_id FROM artist WHERE artist.`artist_name` LIKE '%" . $_GET['query'] . "%') OR music.`music_title` LIKE '%" . $_GET['query'] . "%'";
             } else {
                 $query = "SELECT music.*,artist.artist_name, artist.artist_image, album.album_name, album.album_photo, album.releaseyear,musicgenre.music_genre_name FROM music INNER JOIN artist ON music.music_artist= artist.artist_id INNER JOIN album ON music.music_album = album.id INNER JOIN musicgenre ON music.music_genre = musicgenre.id";

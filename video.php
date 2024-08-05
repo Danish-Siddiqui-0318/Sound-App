@@ -47,7 +47,7 @@
                 <div class="search">
                     <form action="">
                         <input placeholder="Search..." type="text" name="query"
-                            value="<?php if ($_GET['query'] != '') {
+                            value="<?php if (isset($_GET['query'])) {
                                 echo $_GET['query'];
                             } ?>">
                         <button type="submit">Go</button>
@@ -59,7 +59,7 @@
             <?php require_once ('admin/db.php');
 
 
-            if ($_GET['query'] != '') {
+            if (isset($_GET['query'])) {
                 $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
                 FROM video
                 INNER JOIN video_artist ON video.video_artist = video_artist.id
