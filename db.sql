@@ -76,6 +76,19 @@ insert  into `artist`(`artist_id`,`artist_name`,`artist_image`) values
 (20,'Aditya Rikhari','artist_image/Aditya_Rikhari.jpg'),
 (21,'One Republic','artist_image/one repub.jpg');
 
+/*Table structure for table `msiic_review` */
+
+DROP TABLE IF EXISTS `msiic_review`;
+
+CREATE TABLE `msiic_review` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `review` varchar(255) DEFAULT NULL,
+  `music_id` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `msiic_review` */
+
 /*Table structure for table `music` */
 
 DROP TABLE IF EXISTS `music`;
@@ -108,6 +121,19 @@ insert  into `music`(`id`,`music_loc`,`music_title`,`music_thumbnail`,`music_yea
 (21,'music/Dandelions.mp3','Dandelions','music_thumbnail/dandlions.jpg','2017','18','17','5'),
 (22,'music/O Maahi.mp3','O Maahi','music_thumbnail/o mahee.jpg','2023','19','18','5'),
 (23,'music/[SPOTIFY-DOWNLOADER.COM] Samjho Na.mp3','Samjho Na','music_thumbnail/samjho na.jpg','2022','20','19','5');
+
+/*Table structure for table `music_rating` */
+
+DROP TABLE IF EXISTS `music_rating`;
+
+CREATE TABLE `music_rating` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rating` int(11) DEFAULT NULL,
+  `music_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `music_rating` */
 
 /*Table structure for table `musicgenre` */
 
@@ -188,6 +214,31 @@ insert  into `video_artist`(`id`,`artist_name`,`artist_img`) values
 (8,'Druv Rathee','video_artist_image/druv rathee.jpg'),
 (9,'Harry','video_artist_image/harry pic.jpg'),
 (10,'Chai or code','video_artist_image/chai or code.jpg');
+
+/*Table structure for table `video_rating` */
+
+DROP TABLE IF EXISTS `video_rating`;
+
+CREATE TABLE `video_rating` (
+  `id` int(11) DEFAULT NULL,
+  `rating` int(11) DEFAULT NULL,
+  `video_rating` varchar(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `video_rating` */
+
+/*Table structure for table `video_review` */
+
+DROP TABLE IF EXISTS `video_review`;
+
+CREATE TABLE `video_review` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `review` varchar(255) DEFAULT NULL,
+  `video_id` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `video_review` */
 
 /*Table structure for table `videogenre` */
 
