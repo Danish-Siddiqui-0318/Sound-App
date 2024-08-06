@@ -73,7 +73,8 @@
                     <div class="col-md-12 text-center">
                         <a href="music_review.php?id=<?php echo $row['id'] ?>"><button type="button"
                                 class="btn btn-outline-success">Give Review</button></a>
-                        <a href=""><button type="button" class="btn btn-outline-info">Give Rating</button></a>
+                        <a href="music_rating.php?id=<?php echo $row['id'] ?>"><button type="button"
+                                class="btn btn-outline-info">Give Rating</button></a>
                     </div>
                 </div>
             </div>
@@ -113,6 +114,10 @@
                                 <li class="list-group-item"><?php echo $reviewrow['review'] ?></li>
                                 <?php
                             }
+                        } else {
+                            ?>
+                            <li class="list-group-item">No Reviews Yet</li>
+                            <?php
                         }
                         ?>
                     </ul>
@@ -151,4 +156,5 @@
         player.stop();
     </script>
 </body>
+
 </html>

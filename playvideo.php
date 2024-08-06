@@ -27,7 +27,8 @@
     <!-- owl stylesheets -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+        media="screen">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -39,11 +40,11 @@
 <body style="background-color: black;color: white;">
 
     <!-- Navbar HERE-->
-    <?php require_once('components/navbar.php') ?>
+    <?php require_once ('components/navbar.php') ?>
     <!-- Navbar HERE-->
     <?php
 
-    require_once('admin/db.php');
+    require_once ('admin/db.php');
     $id = $_GET['id'];
     $query = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
     FROM video
@@ -54,11 +55,12 @@
         $row = mysqli_fetch_assoc($result);
     }
     ?>
-    
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 my-4 rounded-lg" style="background-color: black;color: green;">
-                <video class="--plyr-badge-border-radius" id="player" playsinline controls data-poster="admin/<?php echo $row['video_thumbnail'] ?>" >
+                <video class="--plyr-badge-border-radius" id="player" playsinline controls
+                    data-poster="admin/<?php echo $row['video_thumbnail'] ?>">
                     <source src="admin/<?php echo $row['video_loc'] ?>" type="video/mp4" />
                 </video>
             </div>
@@ -80,13 +82,48 @@
                 <h2 class="text-white" style="font-size: 30px;">Description : </h2>
                 <h4><?php echo $row['video_description'] ?></h4>
             </div>
+            <div class="col-md-12">
+                <a href="video_review.php?id=<?php echo $row['id'] ?>"><button type="button"
+                        class="btn btn-outline-success">Give Review</button></a>
+                <a href="video_rating.php?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-outline-info">Give Rating</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center text-capitalize">Reviews</h2>
+            </div>
+            <div class="col-md-12">
+                <div class="card" style="width: 100%;color:black;">
+                    <div class="card-header">
+                        Reviews
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <?php
+                        require_once ('admin/db.php');
+                        $reviewQuery = "SELECT * FROM video_review WHERE video_id=$id ORDER BY video_review.`id` DESC LIMIT 3";
+                        $reviewresult = mysqli_query($connection, $reviewQuery);
+                        if ($reviewresult->num_rows > 0) {
+                            while ($reviewrow = mysqli_fetch_assoc($reviewresult)) {
+                                ?>
+                                <li class="list-group-item"><?php echo $reviewrow['review'] ?></li>
+                                <?php
+                            }
+                        } else {
+                            ?>
+                            <li class="list-group-item">No Reviews Yet</li>
+                            <?php
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
 
 
     <!-- footer  section start -->
-    <?php require_once('components/footer.php') ?>
+    <?php require_once ('components/footer.php') ?>
     <!-- footer  section end -->
     <script src=" js/jquery.min.js">
     </script>
