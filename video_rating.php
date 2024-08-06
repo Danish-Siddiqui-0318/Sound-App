@@ -46,22 +46,23 @@
     <!-- Navbar HERE-->
 
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <form action="videoratingprocess.php" method="POST">
-                    <div class="mb-3">
-                        <input type="hidden" class="form-control" id="exampleFormControlInput1"
-                            placeholder="name@example.com" name="video_id" value="<?php echo $id ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Give Your Review</label>
-                       <input type="number" name="video_rating" maxlength="5" min="1">
-                    </div>
-                    <input type="submit" class="btn btn-outline-success"></input>
-                </form>
-            </div>
+  <div class="container-fluid">
+     <div class="row">
+        <div class="col-md-12">
+            <form action="videoratingprocess.php" method="POST" id="ratingForm">
+                <div class="mb-3">
+                    <input type="hidden" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com" name="video_id" value="<?php echo $id ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="video_rating" class="form-label">Give Your Ratings </label>
+                    <input type="number" name="video_rating" id="video_rating" min="1" max="10" step="0.1" required>
+                </div>
+                <input type="submit" class="btn btn-outline-success" value="Submit">
+            </form>
+            <p id="errorMessage" style="color: red; display: none;">Please enter a valid rating between 1.0 and 10.0.</p>
         </div>
+     </div>
         <div class="row">
             <div style="position: absolute;bottom:0;" class="col-md-12">
                 <!-- footer  section start -->
@@ -69,6 +70,21 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+document.getElementById('ratingForm').addEventListener('submit', function(e) {
+    let rating = parseFloat(document.getElementById('video_rating').value);
+    let errorMessage = document.getElementById('errorMessage');
+    
+    if (isNaN(rating) || rating < 1 || rating > 10) {
+        e.preventDefault(); // Prevent form submission
+        errorMessage.style.display = 'block';
+    } else {
+        errorMessage.style.display = 'none';
+    }
+});
+</script>
 
     <!-- footer  section end -->
     <script src=" js/jquery.min.js">
