@@ -71,8 +71,9 @@
                             : <?php echo $row['releaseyear'] ?></h3>
                     </div>
                     <div class="col-md-12 text-center">
-                        <button type="button" class="btn btn-success">Give Review</button>
-                        <button type="button" class="btn btn-info">Give Rating</button>
+                        <a href="music_review.php?id=<?php echo $row['id'] ?>"><button type="button"
+                                class="btn btn-outline-success">Give Review</button></a>
+                        <a href=""><button type="button" class="btn btn-outline-info">Give Rating</button></a>
                     </div>
                 </div>
             </div>
@@ -89,6 +90,33 @@
                 <audio id="player" controls style="--plyr-color-main: #1ac266; ">
                     <source src="admin/<?php echo $row['music_loc'] ?>" type="audio/mp3" />
                 </audio>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center text-capitalize">Reviews</h2>
+            </div>
+            <div class="col-md-12">
+                <div class="card" style="width: 100%;color:black;">
+                    <div class="card-header">
+                        Reviews
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <?php
+                        require_once ('admin/db.php');
+                        $reviewQuery = "SELECT * FROM music_review WHERE music_id=$id ORDER BY music_review.`id` DESC LIMIT 3";
+                        $reviewresult = mysqli_query($connection, $reviewQuery);
+                        if ($reviewresult->num_rows > 0) {
+                            while ($reviewrow = mysqli_fetch_assoc($reviewresult)) {
+                                ?>
+                                <li class="list-group-item"><?php echo $reviewrow['review'] ?></li>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -123,5 +151,4 @@
         player.stop();
     </script>
 </body>
-
 </html>
