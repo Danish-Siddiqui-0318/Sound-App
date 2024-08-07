@@ -70,6 +70,25 @@
                         <h3 class="text-center text-capitalize">Album : <?php echo $row['album_name'] ?><br>Release Year
                             : <?php echo $row['releaseyear'] ?></h3>
                     </div>
+                    <div class="col-md-12">
+                        <h3 class="text-center text-capitalize">Rating :
+                            <?php
+                            require_once ('admin/db.php');
+                            $ratingquery = "SELECT * FROM music_rating WHERE music_id =" . $id;
+                            $ratingresult = mysqli_query($connection, $ratingquery);
+                            if ($ratingresult->num_rows > 0) {
+                                $averating = 0;
+                                $count = 0;
+                                while ($ratingrow = mysqli_fetch_assoc($ratingresult)) {
+                                    $averating += $ratingrow['rating'];
+                                    $count = $count + 1;
+                                }
+                                $totalRating = $averating / $count;
+                                echo (int)$totalRating ;
+                            }
+                            ?>
+                        </h3>
+                    </div>
                     <div class="col-md-12 text-center">
                         <a href="music_review.php?id=<?php echo $row['id'] ?>"><button type="button"
                                 class="btn btn-outline-success">Give Review</button></a>
@@ -87,6 +106,9 @@
                     color: white;
                 }
             </style>
+            <!-- $ratingrow = mysqli_fetch_assoc($ratingresult);
+                            print_r($ratingrow) ;
+                            die; -->
             <div class="col-md-12 my-4">
                 <audio id="player" controls style="--plyr-color-main: #1ac266; ">
                     <source src="admin/<?php echo $row['music_loc'] ?>" type="audio/mp3" />
