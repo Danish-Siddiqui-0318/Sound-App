@@ -6,8 +6,8 @@ $id = $_GET['id'];
 $query = "DELETE FROM `video_review` WHERE `id`='$id'";
 $result = mysqli_query($connection, $query);
 if ($result) {
-    header('location:videoreview.php?msg=Video Deleted Successfully');
+    header('location:videoreview.php?msg=Video Review Deleted Successfully');
 } else {
-    header('location:videoreview.php?msg=Error in Deleting Video ');
+    header('location:videoreview.php?msg=Error in Deleting Video Review ');
 }
 ?>
