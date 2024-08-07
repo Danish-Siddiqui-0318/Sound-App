@@ -1,5 +1,5 @@
 /*
-SQLyog Ultimate v13.1.1 (64 bit)
+SQLyog Professional v13.1.1 (64 bit)
 MySQL - 10.4.32-MariaDB : Database - sound-app
 *********************************************************************
 */
@@ -76,19 +76,6 @@ insert  into `artist`(`artist_id`,`artist_name`,`artist_image`) values
 (20,'Aditya Rikhari','artist_image/Aditya_Rikhari.jpg'),
 (21,'One Republic','artist_image/one repub.jpg');
 
-/*Table structure for table `msiic_review` */
-
-DROP TABLE IF EXISTS `msiic_review`;
-
-CREATE TABLE `msiic_review` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `review` varchar(255) DEFAULT NULL,
-  `music_id` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-/*Data for the table `msiic_review` */
-
 /*Table structure for table `music` */
 
 DROP TABLE IF EXISTS `music`;
@@ -131,9 +118,30 @@ CREATE TABLE `music_rating` (
   `rating` int(11) DEFAULT NULL,
   `music_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `music_rating` */
+
+insert  into `music_rating`(`id`,`rating`,`music_id`) values 
+(1,5,10),
+(2,5,10);
+
+/*Table structure for table `music_review` */
+
+DROP TABLE IF EXISTS `music_review`;
+
+CREATE TABLE `music_review` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `review` varchar(255) DEFAULT NULL,
+  `music_id` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `music_review` */
+
+insert  into `music_review`(`id`,`review`,`music_id`) values 
+(1,'Nice Song','10'),
+(2,'its a very good song for entertain','10');
 
 /*Table structure for table `musicgenre` */
 
@@ -222,10 +230,13 @@ DROP TABLE IF EXISTS `video_rating`;
 CREATE TABLE `video_rating` (
   `id` int(11) DEFAULT NULL,
   `rating` int(11) DEFAULT NULL,
-  `video_rating` varchar(11) DEFAULT NULL
+  `video_id` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `video_rating` */
+
+insert  into `video_rating`(`id`,`rating`,`video_id`) values 
+(NULL,10,'2');
 
 /*Table structure for table `video_review` */
 
@@ -236,9 +247,12 @@ CREATE TABLE `video_review` (
   `review` varchar(255) DEFAULT NULL,
   `video_id` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `video_review` */
+
+insert  into `video_review`(`id`,`review`,`video_id`) values 
+(1,'Very Informative Video','2');
 
 /*Table structure for table `videogenre` */
 
