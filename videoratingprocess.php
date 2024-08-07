@@ -8,9 +8,9 @@ $id = $_POST['video_id'];
 $query = "INSERT INTO video_rating (rating,video_id) VALUES ('" . $video_rating . "','" . $id . "')";
 $result = mysqli_query($connection, $query);
 if ($result) {
-    header("location:music.php?msg=Review Added ");
+    header("location:video.php?msg=Review Added ");
 } else {
-    header("location:music.php?msg=Review Not Added Successfully");
+    header("location:video.php?msg=Review Not Added Successfully");
 }
 
 ?>
