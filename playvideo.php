@@ -83,9 +83,29 @@
                 <h4><?php echo $row['video_description'] ?></h4>
             </div>
             <div class="col-md-12">
+                <h3 class=" text-capitalize">Rating :
+                    <?php
+                    require_once ('admin/db.php');
+                    $ratingquery = "SELECT * FROM video_rating WHERE video_id =" . $id;
+                    $ratingresult = mysqli_query($connection, $ratingquery);
+                    if ($ratingresult->num_rows > 0) {
+                        $averating = 0;
+                        $count = 0;
+                        while ($ratingrow = mysqli_fetch_assoc($ratingresult)) {
+                            $averating += $ratingrow['rating'];
+                            $count = $count + 1;
+                        }
+                        $totalRating = $averating / $count;
+                        echo (int) $totalRating;
+                    }
+                    ?>
+                </h3>
+            </div>
+            <div class="col-md-12">
                 <a href="video_review.php?id=<?php echo $row['id'] ?>"><button type="button"
                         class="btn btn-outline-success">Give Review</button></a>
-                <a href="video_rating.php?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-outline-info">Give Rating</button></a>
+                <a href="video_rating.php?id=<?php echo $row['id'] ?>"><button type="button"
+                        class="btn btn-outline-info">Give Rating</button></a>
             </div>
         </div>
         <div class="row">
