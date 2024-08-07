@@ -99,6 +99,22 @@
             </p>
           </a>
         </li>
+        <li class="nav-item menu-open">
+          <a href="videoreview.php" class="nav-link active">
+            <i class="nav-icon far fa-plus-square"></i>
+            <p>
+              Video Reviews
+            </p>
+          </a>
+        </li>
+        <li class="nav-item menu-open">
+          <a href="musicreview.php" class="nav-link active">
+            <i class="nav-icon far fa-plus-square"></i>
+            <p>
+              Music Reviews
+            </p>
+          </a>
+        </li>
     </nav>
     <!-- /.sidebar-menu -->
   </div>
