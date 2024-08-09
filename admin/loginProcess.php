@@ -11,7 +11,7 @@ if ($result->num_rows > 0) {
     $row = mysqli_fetch_assoc($result);
     session_start();
     $_SESSION['user'] = $row;
-    header('location:index.php');
+    header('location:users.php');
 } else {
     header('location:login.php?msg=invalid user/password');
 }
