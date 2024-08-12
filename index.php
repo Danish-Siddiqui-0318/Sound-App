@@ -50,15 +50,10 @@
    $Carouselrow = mysqli_fetch_assoc($result);
    ?>
    <div class="banner_section layout_padding"
-      style="background-image: url(admin/<?php echo $Carouselrow['video_thumbnail'] ?>);background-repeat: no-repeat;background-size:100vw 100vh;">
+      style="background-image: url(admin/<?php echo $Carouselrow['video_thumbnail'] ?>);background-repeat: no-repeat;background-size:100% 100%;">
       <div class="container">
          <div class="row">
-            <div class="col-md-6" style="background: rgba(255, 255, 255, 0.22);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(1.6px);
--webkit-backdrop-filter: blur(1.6px);
-border: 1px solid rgba(255, 255, 255, 0.49);">
+            <div class="col-md-6">
                <div class="banner_taital " style="texts">Enjoy:
                   <br><?php echo $Carouselrow['video_title'] ?> With <br>
                   <?php echo $Carouselrow['artist_name'] ?>
@@ -88,7 +83,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                   <?php
                   require_once ('admin/db.php');
                   $musicQuery = "SELECT music.*,artist.artist_name, artist.artist_image, album.album_name, album.album_photo, album.releaseyear,musicgenre.music_genre_name FROM music INNER JOIN artist ON music.music_artist= artist.artist_id INNER JOIN album ON music.music_album = album.id INNER JOIN musicgenre ON music.music_genre = musicgenre.id ORDER BY music.`id` DESC
-                  LIMIT 4 ";
+                  LIMIT 5 ";
                   $musicResult = mysqli_query($connection, $musicQuery);
                   if ($musicResult->num_rows > 0) {
                      while ($musicrow = mysqli_fetch_assoc($musicResult)) {
@@ -125,7 +120,7 @@ border: 1px solid rgba(255, 255, 255, 0.49);">
                   $videoQuerry = "SELECT video.*, video_artist.artist_name, videogenre.`video_genre_name`
                   FROM video
                   INNER JOIN video_artist ON video.video_artist = video_artist.id
-                  INNER JOIN videogenre ON videogenre.id = video.video_genre  ORDER BY video.`id` LIMIT 4";
+                  INNER JOIN videogenre ON videogenre.id = video.video_genre  ORDER BY video.`id` LIMIT 5";
                   $videoResult = mysqli_query($connection, $videoQuerry);
                   if ($videoResult->num_rows > 0) {
                      while ($videorow = mysqli_fetch_assoc($videoResult)) {
