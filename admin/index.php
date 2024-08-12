@@ -68,7 +68,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          Footer
+          Thank You
         </div>
         <!-- /.card-footer-->
       </div>

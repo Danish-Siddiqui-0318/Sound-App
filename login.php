@@ -43,7 +43,8 @@ if (isset($_SESSION['user'])) {
                   type="submit" value="Login"></input>
               </div>
 
-              <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+              <!--<p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a>-->
+            </p>
               <button class="btn btn-primary "><a href="signin.php" class="text-white">
                   Sign in
                 </a> </button>

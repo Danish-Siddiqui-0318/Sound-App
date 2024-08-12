@@ -48,7 +48,7 @@
                         <input placeholder="Search..." type="text" name="query" value="<?php if (isset($_GET['query'])) {
                                                                                             echo $_GET['query'];
                                                                                         } ?>">
-                        <button type="submit">Go</button>
+                        <button type="submit" style="background-color: green;">Go</button>
                     </form>
                 </div>
             </div>
